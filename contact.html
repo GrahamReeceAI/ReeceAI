@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Reece AI | Intelligent Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#690005",
+                    "inverse-primary": "#006780",
+                    "on-secondary-fixed": "#0f1d2a",
+                    "surface-variant": "#2a354a",
+                    "on-tertiary-container": "#0049a1",
+                    "tertiary": "#ccdaff",
+                    "surface-bright": "#2f394f",
+                    "surface-container": "#151f34",
+                    "surface": "#081327",
+                    "inverse-surface": "#d8e2fe",
+                    "on-primary": "#003544",
+                    "tertiary-fixed": "#d8e2ff",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#a1beff",
+                    "primary-fixed": "#b8eaff",
+                    "primary": "#a1e4ff",
+                    "inverse-on-surface": "#263045",
+                    "background": "#081327",
+                    "secondary-fixed": "#d6e4f7",
+                    "on-secondary-fixed-variant": "#3b4857",
+                    "on-primary-fixed": "#001f28",
+                    "surface-container-high": "#1f2a3f",
+                    "on-secondary": "#243240",
+                    "on-tertiary": "#002e6a",
+                    "outline-variant": "#3c494e",
+                    "secondary-fixed-dim": "#bac8da",
+                    "secondary": "#bac8da",
+                    "on-primary-container": "#00546a",
+                    "on-surface": "#d8e2fe",
+                    "primary-container": "#00cfff",
+                    "surface-container-highest": "#2a354a",
+                    "on-tertiary-fixed": "#001a42",
+                    "on-tertiary-fixed-variant": "#004395",
+                    "surface-container-low": "#101b2f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-container": "#acbacc",
+                    "outline": "#869399",
+                    "tertiary-fixed-dim": "#adc6ff",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#3d4a5a",
+                    "surface-container-lowest": "#030e21",
+                    "on-surface-variant": "#bbc9cf",
+                    "surface-dim": "#081327",
+                    "surface-tint": "#54d5ff",
+                    "on-background": "#d8e2fe",
+                    "on-primary-fixed-variant": "#004d61",
+                    "primary-fixed-dim": "#54d5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(21, 31, 52, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-slate-950/80 backdrop-blur-xl z-50 flex justify-between items-center px-8 py-3 shadow-[0_8px_32px_rgba(0,207,255,0.08)] font-['Inter'] antialiased tracking-tight">
+<a href="index.html" class="text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-400 hover:text-white transition-colors duration-300" href="index.html">Home</a>
+<a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
+<a class="text-cyan-300 font-semibold transition-colors duration-300" href="contact.html">Contact</a>
+</div>
+<a href="contact.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold scale-95 active:scale-90 transition-transform">
+            Get in Touch
+        </a>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-24 text-left">
+<div class="inline-block px-4 py-1.5 rounded-full bg-surface-container-high text-primary text-xs font-bold tracking-[0.05em] uppercase mb-6">
+                Direct Connection
+            </div>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-8">
+                Let's Build the <span class="gradient-text">Future</span> Together.
+            </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                We bridge the gap between architectural precision and artificial intelligence. Reach out for a consultation, or just to talk tech.
+            </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Main Contact Form -->
+<section class="lg:col-span-7 bg-surface-container-low rounded-3xl p-8 md:p-12 shadow-sm border border-outline-variant/10">
+<div class="mb-10">
+<h2 class="text-3xl font-bold tracking-tight mb-2">Inquiry Form</h2>
+<p class="text-on-surface-variant">Fields marked with * are required.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Name *</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="John Doe" type="text"/>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Company Name</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="Design Studio Ltd." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Email Address *</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="john@example.com" type="email"/>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Phone Number</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Business Sector</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 appearance-none">
+<option>Architecture &amp; Engineering</option>
+<option>Real Estate Development</option>
+<option>Software &amp; SaaS</option>
+<option>Other</option>
+</select>
+</div>
+<div class="relative">
+<label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Biggest Challenge</label>
+<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600 resize-none" placeholder="Tell us what you're trying to solve..." rows="4"></textarea>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<button class="gradient-button text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(161,228,255,0.4)] transition-all" type="submit">
+                            Submit Inquiry
+                        </button>
+<div class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">timer</span>
+                            We respond within one working day.
+                        </div>
+</div>
+</form>
+</section>
+<!-- Sidebar Info & Calendly -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Direct Contact Card -->
+<div class="bg-surface-container rounded-3xl p-8 border border-outline-variant/10">
+<h3 class="text-xl font-bold mb-6">Direct Contact</h3>
+<div class="space-y-6">
+<a class="flex items-center gap-4 group" href="mailto:graham@reeceai.ai">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Email</p>
+<p class="text-lg font-medium">graham@reeceai.ai</p>
+</div>
+</a>
+<a class="flex items-center gap-4 group" href="https://reeceai.ai">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Website</p>
+<p class="text-lg font-medium">reeceai.ai</p>
+</div>
+</a>
+</div>
+</div>
+<!-- Calendly Placeholder -->
+<div class="bg-slate-900 rounded-3xl p-8 border border-outline-variant/10 relative overflow-hidden h-[400px] flex flex-col justify-center items-center text-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 50% 50%, #54d5ff 0%, transparent 70%);"></div>
+<span class="material-symbols-outlined text-6xl text-primary mb-6">calendar_month</span>
+<h3 class="text-2xl font-bold mb-4 relative z-10">Prefer a face-to-face?</h3>
+<p class="text-on-surface-variant mb-8 relative z-10">Book a discovery call directly with our team.</p>
+<div class="w-full bg-surface-container-highest/50 border-2 border-dashed border-outline-variant rounded-2xl py-12 px-4 relative z-10">
+<p class="text-sm italic text-outline">Calendly Widget Placeholder</p>
+<button class="mt-4 text-primary font-bold hover:underline">Select a Date &amp; Time</button>
+</div>
+</div>
+<!-- Global Presence Map Style -->
+<div class="bg-surface-container-low rounded-3xl p-8 border border-outline-variant/10 overflow-hidden relative">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMRdeiXbHC4jTVl0VSZA15DcxScbaMQhWN62ar6HEJse4D_TMJccefvqzvNEtkeFi7zpWWRYnFLFojPZEac-betUp1kK27fcsTFBFUiUxDGXPuCTUz2qr7f6JPLRHMZ4k3nEY6sL3BPkI7_Fb1IjyZKDGnFVch9aRgkAXDHxH3DBhWvKeLit4nmoPIQsHPoswkWVhIsPjAuP6PVY8ypettcsCtP9w54VjUoo_-HMx5QmgDwJJBtjRs55OxwclG9UvZ-w7tnDUHLFk" alt="Global digital map"/>
+<div class="relative z-10">
+<h4 class="text-sm font-bold uppercase tracking-[0.2em] text-primary mb-2">Our Reach</h4>
+<p class="text-lg font-medium">Serving architectural teams worldwide from our digital hub.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (AI Assistant FAB) -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4 font-['Inter'] font-medium">
+<button class="bg-slate-800 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined">cookie</span>
+</button>
+<button class="bg-cyan-500 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform animate-pulse flex items-center justify-center">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-10 px-8 bg-slate-950 font-['Inter'] text-sm tracking-wide flex flex-col items-center text-center space-y-4">
+<div class="text-xl font-bold text-white mb-4">Reece AI</div>
+<div class="flex gap-6 mb-8">
+<a class="text-slate-500 hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
+<a class="text-slate-500 hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
+</div>
+<div class="text-slate-500 max-w-md">
+            Architecting the future of intelligence through seamless AI integration and editorial design principles.
+        </div>
+<div class="pt-8 text-xs text-slate-500">
+            Reece AI | Registration No: 17137008
+        </div>
+</footer>
+</body></html>
