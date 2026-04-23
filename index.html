@@ -1,461 +1,615 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Reece AI | AI That Works For Your Business</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-error": "#690005",
-                    "inverse-primary": "#006780",
-                    "on-secondary-fixed": "#0f1d2a",
-                    "surface-variant": "#2a354a",
-                    "on-tertiary-container": "#0049a1",
-                    "tertiary": "#ccdaff",
-                    "surface-bright": "#2f394f",
-                    "surface-container": "#151f34",
-                    "surface": "#081327",
-                    "inverse-surface": "#d8e2fe",
-                    "on-primary": "#003544",
-                    "tertiary-fixed": "#d8e2ff",
-                    "error-container": "#93000a",
-                    "tertiary-container": "#a1beff",
-                    "primary-fixed": "#b8eaff",
-                    "primary": "#a1e4ff",
-                    "inverse-on-surface": "#263045",
-                    "background": "#081327",
-                    "secondary-fixed": "#d6e4f7",
-                    "on-secondary-fixed-variant": "#3b4857",
-                    "on-primary-fixed": "#001f28",
-                    "surface-container-high": "#1f2a3f",
-                    "on-secondary": "#243240",
-                    "on-tertiary": "#002e6a",
-                    "outline-variant": "#3c494e",
-                    "secondary-fixed-dim": "#bac8da",
-                    "secondary": "#bac8da",
-                    "on-primary-container": "#00546a",
-                    "on-surface": "#d8e2fe",
-                    "primary-container": "#00cfff",
-                    "surface-container-highest": "#2a354a",
-                    "on-tertiary-fixed": "#001a42",
-                    "on-tertiary-fixed-variant": "#004395",
-                    "surface-container-low": "#101b2f",
-                    "on-error-container": "#ffdad6",
-                    "on-secondary-container": "#acbacc",
-                    "outline": "#869399",
-                    "tertiary-fixed-dim": "#adc6ff",
-                    "error": "#ffb4ab",
-                    "secondary-container": "#3d4a5a",
-                    "surface-container-lowest": "#030e21",
-                    "on-surface-variant": "#bbc9cf",
-                    "surface-dim": "#081327",
-                    "surface-tint": "#54d5ff",
-                    "on-background": "#d8e2fe",
-                    "on-primary-fixed-variant": "#004d61",
-                    "primary-fixed-dim": "#54d5ff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Inter"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-error": "#690005", "inverse-primary": "#006780", "on-secondary-fixed": "#0f1d2a",
+          "surface-variant": "#2a354a", "on-tertiary-container": "#0049a1", "tertiary": "#ccdaff",
+          "surface-bright": "#2f394f", "surface-container": "#151f34", "surface": "#081327",
+          "inverse-surface": "#d8e2fe", "on-primary": "#003544", "tertiary-fixed": "#d8e2ff",
+          "error-container": "#93000a", "tertiary-container": "#a1beff", "primary-fixed": "#b8eaff",
+          "primary": "#a1e4ff", "inverse-on-surface": "#263045", "background": "#081327",
+          "secondary-fixed": "#d6e4f7", "on-secondary-fixed-variant": "#3b4857", "on-primary-fixed": "#001f28",
+          "surface-container-high": "#1f2a3f", "on-secondary": "#243240", "on-tertiary": "#002e6a",
+          "outline-variant": "#3c494e", "secondary-fixed-dim": "#bac8da", "secondary": "#bac8da",
+          "on-primary-container": "#00546a", "on-surface": "#d8e2fe", "primary-container": "#00cfff",
+          "surface-container-highest": "#2a354a", "on-tertiary-fixed": "#001a42",
+          "on-tertiary-fixed-variant": "#004395", "surface-container-low": "#101b2f",
+          "on-error-container": "#ffdad6", "on-secondary-container": "#acbacc", "outline": "#869399",
+          "tertiary-fixed-dim": "#adc6ff", "error": "#ffb4ab", "secondary-container": "#3d4a5a",
+          "surface-container-lowest": "#030e21", "on-surface-variant": "#bbc9cf", "surface-dim": "#081327",
+          "surface-tint": "#54d5ff", "on-background": "#d8e2fe", "on-primary-fixed-variant": "#004d61",
+          "primary-fixed-dim": "#54d5ff"
         },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        fontFamily: { headline: ["Inter"], body: ["Inter"], label: ["Inter"] }
       }
-    </script>
+    }
+  }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-panel {
-            background: rgba(21, 31, 52, 0.8);
-            backdrop-filter: blur(20px);
-        }
-        .primary-gradient {
-            background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%);
-        }
-        body {
-            background-color: #081327;
-            color: #d8e2fe;
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .primary-gradient { background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%); }
+  body { background-color: #081327; color: #d8e2fe; font-family: 'Inter', sans-serif; }
+</style>
 </head>
 <body class="antialiased overflow-x-hidden">
-<!-- Top Navigation -->
-<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] z-50 flex justify-between items-center px-8 py-3 font-['Inter'] antialiased tracking-tight">
-<a href="index.html" class="text-2xl font-bold tracking-tighter text-white">Reece AI</a>
-<div class="hidden md:flex gap-8">
-<a class="text-cyan-300 font-semibold transition-colors duration-300" href="index.html">Home</a>
-<a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
-<a class="text-slate-400 hover:text-white transition-colors duration-300" href="contact.html">Contact</a>
-</div>
-<a href="contact.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold scale-95 active:scale-90 transition-transform">
-            Get in Touch
-        </a>
+
+<!-- Navigation -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] z-50 flex justify-between items-center px-8 py-3 font-['Inter'] tracking-tight">
+  <a href="index.html" class="text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+  <div class="hidden md:flex gap-8">
+    <a class="text-cyan-300 font-semibold transition-colors duration-300" href="index.html">Home</a>
+    <a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
+    <a class="text-slate-400 hover:text-white transition-colors duration-300" href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
 </nav>
-<!-- Side Assistant Component -->
-<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4 font-['Inter'] font-medium">
-<button class="bg-slate-800 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform">
-<span class="material-symbols-outlined">cookie</span>
-</button>
-<button class="bg-cyan-500 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform animate-pulse">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-</button>
+
+<!-- FAB buttons -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+  <button class="bg-slate-800 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform">
+    <span class="material-symbols-outlined">cookie</span>
+  </button>
+  <button class="bg-cyan-500 text-white rounded-full p-4 shadow-[0_0_20px_rgba(0,207,255,0.3)] hover:scale-110 transition-transform animate-pulse">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">chat</span>
+  </button>
 </div>
+
 <main>
-<!-- Hero Section -->
-<section class="relative min-height-[921px] pt-44 pb-24 px-8 flex flex-col items-center justify-center text-center">
-<div class="absolute inset-0 z-0 overflow-hidden">
-<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
-</div>
-<div class="relative z-10 max-w-4xl">
-<div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high border border-outline-variant/20 text-primary-fixed text-sm font-label tracking-widest uppercase">
-<span class="material-symbols-outlined text-sm">verified</span> UK Registered Company
-                </div>
-<h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
-                    AI That Works <br/><span class="text-primary-container">For Your Business</span>
-</h1>
-<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 font-body leading-relaxed">
-                    Stop guessing. Start scaling. We bridge the gap between complex AI technology and real-world business results.
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 justify-center">
-<a href="contact.html" class="primary-gradient text-on-primary text-xl font-bold px-10 py-5 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-                        Book a Discovery Audit
-                    </a>
-<a href="about.html" class="bg-surface-container-low border border-outline-variant/30 text-primary text-xl font-bold px-10 py-5 rounded-xl hover:bg-surface-container transition-colors">
-                        View Our Process
-                    </a>
-</div>
-</div>
+
+<!-- ① HERO -->
+<section class="relative pt-44 pb-24 px-8 flex flex-col items-center justify-center text-center">
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl">
+    <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high border border-outline-variant/20 text-primary-fixed text-sm tracking-widest uppercase">
+      <span class="material-symbols-outlined text-sm">verified</span> UK Registered Company
+    </div>
+    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
+      AI That Works <br/><span class="text-primary-container">For Your Business</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+      Stop guessing. Start scaling. We bridge the gap between complex AI technology and real-world business results.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <a href="contact.html" class="primary-gradient text-on-primary text-xl font-bold px-10 py-5 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+        Book a Discovery Audit
+      </a>
+      <a href="about.html" class="bg-surface-container-low border border-outline-variant/30 text-primary text-xl font-bold px-10 py-5 rounded-xl hover:bg-surface-container transition-colors">
+        View Our Process
+      </a>
+    </div>
+  </div>
 </section>
-<!-- Process Section -->
+
+<!-- ② HOW WE DELIVER -->
 <section class="py-24 bg-surface-container-low px-8">
-<div class="max-w-7xl mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-<div class="max-w-xl">
-<span class="text-primary font-label tracking-[0.2em] uppercase text-sm mb-4 block">How we deliver</span>
-<h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Our Three-Step Professional Framework</h2>
-</div>
-<p class="text-on-surface-variant text-lg max-w-sm">Results-focused methodology designed to integrate seamlessly into your existing workflows.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Step 1 -->
-<div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
-<span class="material-symbols-outlined">insights</span>
-</div>
-<h3 class="text-2xl font-bold text-white mb-4">Strategy</h3>
-<p class="text-on-surface-variant leading-relaxed">We identify the highest-impact AI opportunities unique to your operational structure.</p>
-</div>
-<!-- Step 2 -->
-<div class="p-8 bg-surface-container rounded-2xl border-l-4 border-cyan-500">
-<div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-</div>
-<h3 class="text-2xl font-bold text-white mb-4">Transformation</h3>
-<p class="text-on-surface-variant leading-relaxed">Deployment of custom AI tools and automated pipelines that drive immediate efficiency gains.</p>
-</div>
-<!-- Step 3 -->
-<div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary-fixed-dim">
-<div class="w-12 h-12 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center text-primary-fixed-dim mb-6">
-<span class="material-symbols-outlined">school</span>
-</div>
-<h3 class="text-2xl font-bold text-white mb-4">Education</h3>
-<p class="text-on-surface-variant leading-relaxed">Upskilling your team to manage and evolve with your new AI infrastructure sustainably.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- AI Readiness Quiz (moved above bento grid) -->
-<section class="py-24 bg-surface px-8 relative">
-<div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-[2.5rem] p-12 shadow-2xl relative z-10">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI Readiness Quiz</h2>
-<p class="text-on-surface-variant">Discover your current standing in the AI landscape in under 2 minutes.</p>
-</div>
-
-<!-- Quiz UI (questions) -->
-<div id="quiz-body" class="space-y-10">
-  <!-- Progress bar -->
-  <div class="relative pt-1">
-    <div class="flex mb-4 items-center justify-between">
-      <span id="stage-label" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-primary bg-primary/10">Stage 1 of 8</span>
-      <span id="pct-label" class="text-xs font-semibold inline-block text-primary">0% Complete</span>
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+      <div class="max-w-xl">
+        <span class="text-primary tracking-[0.2em] uppercase text-sm mb-4 block">How we deliver</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Our Three-Step Professional Framework</h2>
+      </div>
+      <p class="text-on-surface-variant text-lg max-w-sm">Results-focused methodology designed to integrate seamlessly into your existing workflows.</p>
     </div>
-    <div class="overflow-hidden h-2 mb-4 rounded bg-surface-container">
-      <div id="progress-bar" class="h-full primary-gradient transition-all duration-500" style="width:0%"></div>
-    </div>
-  </div>
-
-  <!-- Tier indicators -->
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div id="tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-      <div class="text-sm font-bold text-white">Beginner</div>
-      <div class="text-[10px] uppercase tracking-tighter opacity-60">No AI Tools</div>
-    </div>
-    <div id="tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-      <div class="text-sm font-bold text-white">Aware</div>
-      <div class="text-[10px] uppercase tracking-tighter opacity-60">Occasional Use</div>
-    </div>
-    <div id="tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-      <div class="text-sm font-bold text-white">Ready</div>
-      <div class="text-[10px] uppercase tracking-tighter opacity-60">Standard Ops</div>
-    </div>
-    <div id="tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-      <div class="text-sm font-bold text-white">Advanced</div>
-      <div class="text-[10px] uppercase tracking-tighter opacity-60">Full Integration</div>
-    </div>
-  </div>
-
-  <!-- Question card -->
-  <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20">
-    <p id="question-text" class="text-xl text-white font-medium mb-6"></p>
-    <div id="answers" class="grid gap-3"></div>
-  </div>
-
-  <!-- Navigation -->
-  <div class="flex justify-between items-center pt-2">
-    <button id="btn-back" onclick="quizBack()" class="text-on-surface-variant hover:text-primary font-semibold flex items-center gap-2 transition-colors opacity-0 pointer-events-none">
-      <span class="material-symbols-outlined text-sm">arrow_back</span> Back
-    </button>
-    <button id="btn-next" onclick="quizNext()" disabled class="primary-gradient text-on-primary font-bold px-8 py-3 rounded-xl hover:scale-105 transition-transform disabled:opacity-40 disabled:scale-100 disabled:cursor-not-allowed">
-      Next <span class="material-symbols-outlined text-sm align-middle">arrow_forward</span>
-    </button>
-  </div>
-</div>
-
-<!-- Results screen (hidden initially) -->
-<div id="quiz-results" class="hidden text-center space-y-8">
-  <div id="result-icon" class="w-24 h-24 rounded-full mx-auto flex items-center justify-center text-4xl primary-gradient">
-    <span class="material-symbols-outlined text-5xl text-on-primary" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-  </div>
-  <div>
-    <p class="text-primary uppercase tracking-widest text-sm font-bold mb-2">Your AI Readiness Score</p>
-    <h3 id="result-title" class="text-5xl font-black text-white mb-3"></h3>
-    <p id="result-score" class="text-2xl text-primary font-bold mb-4"></p>
-    <p id="result-desc" class="text-on-surface-variant text-lg max-w-xl mx-auto leading-relaxed"></p>
-  </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
-    <div id="res-tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-      <div class="text-sm font-bold text-white">Beginner</div><div class="text-[10px] uppercase tracking-tighter opacity-60">0–6 pts</div>
-    </div>
-    <div id="res-tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-      <div class="text-sm font-bold text-white">Aware</div><div class="text-[10px] uppercase tracking-tighter opacity-60">7–12 pts</div>
-    </div>
-    <div id="res-tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-      <div class="text-sm font-bold text-white">Ready</div><div class="text-[10px] uppercase tracking-tighter opacity-60">13–18 pts</div>
-    </div>
-    <div id="res-tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-      <div class="text-sm font-bold text-white">Advanced</div><div class="text-[10px] uppercase tracking-tighter opacity-60">19–24 pts</div>
-    </div>
-  </div>
-  <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-    <a href="contact.html" class="primary-gradient text-on-primary font-bold px-10 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg">
-      Book a Free Consultation
-    </a>
-    <button onclick="quizRestart()" class="bg-surface-container-low border border-outline-variant/30 text-primary font-bold px-10 py-4 rounded-xl hover:bg-surface-container transition-colors">
-      Retake Quiz
-    </button>
-  </div>
-</div>
-
-</div>
-<div class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div>
-</section>
-
-<!-- Why Reece AI: Bento Grid -->
-<section class="py-24 px-8 overflow-hidden">
-<div class="max-w-7xl mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<div class="md:col-span-8 p-12 bg-surface-container-high rounded-[2rem] flex flex-col justify-end relative overflow-hidden group">
-<div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
-<span class="material-symbols-outlined text-[120px]">verified_user</span>
-</div>
-<span class="text-primary-container font-label uppercase tracking-widest text-xs mb-4">The core promise</span>
-<h3 class="text-4xl font-bold text-white mb-4">Built For Your Business</h3>
-<p class="text-xl text-on-surface-variant max-w-lg">No generic templates. We build bespoke solutions that respect your existing brand voice and data privacy protocols.</p>
-</div>
-<div class="md:col-span-4 p-8 bg-surface-container rounded-[2rem] flex flex-col items-center justify-center text-center">
-<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
-<span class="material-symbols-outlined text-4xl">strikethrough_s</span>
-</div>
-<h3 class="text-2xl font-bold text-white mb-2">No Jargon</h3>
-<p class="text-on-surface-variant">We speak business, not just code. Clear communication at every step.</p>
-</div>
-<div class="md:col-span-4 p-8 bg-surface-container rounded-[2rem] border border-outline-variant/10">
-<div class="text-5xl font-black text-primary mb-6">ROI</div>
-<h3 class="text-2xl font-bold text-white mb-2">Real ROI</h3>
-<p class="text-on-surface-variant">Tangible metrics. Reduced overhead, increased speed, and measurable growth.</p>
-</div>
-<div class="md:col-span-8 p-12 bg-primary-container text-on-primary-container rounded-[2rem] flex items-center gap-12">
-<div class="hidden lg:block w-32 h-32 flex-shrink-0 bg-white/20 rounded-2xl rotate-3">
-<img alt="Support" class="w-full h-full object-cover rounded-2xl mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8AQsQmgUsrDrKyHcGFu6xx0f0jflaqVx2rJOQO_fsfXaAuDRbKEaJCTP63KhBgtJfppED26QBRhazHEK9Ny6hLK5GdgrFfelQx5JAI_B9JoYzTVf9q3qVcDb2WgUaEdciE9pINgEzvAsEnmevv7jUU-sfgK0hY8zh2fnBhIqWFOjBkmaZ_6ahMBSUlB70nYlG5PhZ0dTghmMEYarRKsvap80GNMtQ_ONXt4zOfI7t65xVUCkJ1xCuyPjEM4ph1BbF39c9-7i7JrY"/>
-</div>
-<div>
-<h3 class="text-3xl font-bold mb-3">We Stay With You</h3>
-<p class="text-lg opacity-90 leading-relaxed">Implementation is only the beginning. We provide ongoing support and iterative improvements as AI evolves.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Services Overview -->
-<section class="py-24 px-8 bg-surface-container-low">
-<div class="max-w-7xl mx-auto">
-<div class="mb-16 text-center">
-<h2 class="text-4xl font-bold text-white tracking-tight">Specialized AI Services</h2>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
-<div>
-<span class="material-symbols-outlined text-primary mb-4 text-3xl">fact_check</span>
-<h3 class="text-xl font-bold text-white mb-2">Discovery Audit</h3>
-<p class="text-on-surface-variant text-sm mb-6">A structured discovery audit of your business, delivered with a bespoke Implementation Proposal at a fixed cost based on your business size.</p>
-</div>
-<a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
-<div>
-<span class="material-symbols-outlined text-primary mb-4 text-3xl">map</span>
-<h3 class="text-xl font-bold text-white mb-2">AI Strategy</h3>
-<p class="text-on-surface-variant text-sm mb-6">Tailored roadmap to integrate AI into your long-term goals.</p>
-</div>
-<a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
-<div>
-<span class="material-symbols-outlined text-primary mb-4 text-3xl">rocket_launch</span>
-<h3 class="text-xl font-bold text-white mb-2">AI Implementation</h3>
-<p class="text-on-surface-variant text-sm mb-6">Hands-on deployment of custom AI agents and workflows.</p>
-</div>
-<a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-<!-- Card 4 -->
-<div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
-<div>
-<span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
-<h3 class="text-xl font-bold text-white mb-2">AI Training</h3>
-<p class="text-on-surface-variant text-sm mb-6">Workshops and sessions to empower your staff with AI knowledge.</p>
-</div>
-<a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
-                            Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<!-- AI Assessment Full Width -->
-<section class="py-24 px-8 bg-surface relative overflow-hidden">
-<div class="absolute inset-0 z-0">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-[140px]"></div>
-</div>
-<div class="max-w-7xl mx-auto relative z-10">
-  <div class="bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 border border-primary/15 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left: content -->
-      <div>
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8">
-          <span class="material-symbols-outlined text-sm">analytics</span> Fixed Price Service
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary">
+        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+          <span class="material-symbols-outlined">insights</span>
         </div>
-        <h2 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6">
-          AI Assessment
-        </h2>
-        <p class="text-xl text-on-surface-variant leading-relaxed mb-10">
-          A structured discovery session with your team, followed by a comprehensive written findings report. We identify where AI can deliver the greatest impact in your business — clearly, practically, and without the jargon.
-        </p>
-        <a href="contact.html" class="inline-flex items-center gap-3 primary-gradient text-on-primary text-xl font-bold px-10 py-5 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-          Book Your Assessment <span class="material-symbols-outlined">arrow_forward</span>
+        <h3 class="text-2xl font-bold text-white mb-4">Strategy</h3>
+        <p class="text-on-surface-variant leading-relaxed">We identify the highest-impact AI opportunities unique to your operational structure.</p>
+      </div>
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-cyan-500">
+        <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 mb-6">
+          <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Transformation</h3>
+        <p class="text-on-surface-variant leading-relaxed">Deployment of custom AI tools and automated pipelines that drive immediate efficiency gains.</p>
+      </div>
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary-fixed-dim">
+        <div class="w-12 h-12 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center text-primary-fixed-dim mb-6">
+          <span class="material-symbols-outlined">school</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Education</h3>
+        <p class="text-on-surface-variant leading-relaxed">Upskilling your team to manage and evolve with your new AI infrastructure sustainably.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ AI READINESS QUIZ -->
+<section class="py-24 bg-surface px-8 relative">
+  <div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-[2.5rem] p-12 shadow-2xl relative z-10">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI Readiness Quiz</h2>
+      <p class="text-on-surface-variant">Discover your current standing in the AI landscape in under 2 minutes.</p>
+    </div>
+
+    <!-- Questions -->
+    <div id="quiz-body" class="space-y-10">
+      <div class="relative pt-1">
+        <div class="flex mb-4 items-center justify-between">
+          <span id="stage-label" class="text-xs font-semibold py-1 px-2 uppercase rounded-full text-primary bg-primary/10">Stage 1 of 8</span>
+          <span id="pct-label" class="text-xs font-semibold text-primary">0% Complete</span>
+        </div>
+        <div class="overflow-hidden h-2 mb-4 rounded bg-surface-container">
+          <div id="progress-bar" class="h-full primary-gradient transition-all duration-500" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div id="tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
+          <div class="text-sm font-bold text-white">Beginner</div>
+          <div class="text-[10px] uppercase tracking-tighter opacity-60">No AI Tools</div>
+        </div>
+        <div id="tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
+          <div class="text-sm font-bold text-white">Aware</div>
+          <div class="text-[10px] uppercase tracking-tighter opacity-60">Occasional Use</div>
+        </div>
+        <div id="tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
+          <div class="text-sm font-bold text-white">Ready</div>
+          <div class="text-[10px] uppercase tracking-tighter opacity-60">Standard Ops</div>
+        </div>
+        <div id="tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
+          <div class="text-sm font-bold text-white">Advanced</div>
+          <div class="text-[10px] uppercase tracking-tighter opacity-60">Full Integration</div>
+        </div>
+      </div>
+      <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20">
+        <p id="question-text" class="text-xl text-white font-medium mb-6"></p>
+        <div id="answers" class="grid gap-3"></div>
+      </div>
+      <div class="flex justify-between items-center pt-2">
+        <button id="btn-back" onclick="quizBack()" class="text-on-surface-variant hover:text-primary font-semibold flex items-center gap-2 transition-colors opacity-0 pointer-events-none">
+          <span class="material-symbols-outlined text-sm">arrow_back</span> Back
+        </button>
+        <button id="btn-next" onclick="quizNext()" disabled class="primary-gradient text-on-primary font-bold px-8 py-3 rounded-xl hover:scale-105 transition-transform disabled:opacity-40 disabled:scale-100 disabled:cursor-not-allowed">
+          Next <span class="material-symbols-outlined text-sm align-middle">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="quiz-results" class="hidden text-center space-y-8">
+      <div class="w-24 h-24 rounded-full mx-auto flex items-center justify-center primary-gradient">
+        <span class="material-symbols-outlined text-5xl text-on-primary" style="font-variation-settings:'FILL' 1;">emoji_events</span>
+      </div>
+      <div>
+        <p class="text-primary uppercase tracking-widest text-sm font-bold mb-2">Your AI Readiness Score</p>
+        <h3 id="result-title" class="text-5xl font-black text-white mb-3"></h3>
+        <p id="result-score" class="text-2xl text-primary font-bold mb-4"></p>
+        <p id="result-desc" class="text-on-surface-variant text-lg max-w-xl mx-auto leading-relaxed"></p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div id="res-tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
+          <div class="text-sm font-bold text-white">Beginner</div><div class="text-[10px] uppercase tracking-tighter opacity-60">0–6 pts</div>
+        </div>
+        <div id="res-tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
+          <div class="text-sm font-bold text-white">Aware</div><div class="text-[10px] uppercase tracking-tighter opacity-60">7–12 pts</div>
+        </div>
+        <div id="res-tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
+          <div class="text-sm font-bold text-white">Ready</div><div class="text-[10px] uppercase tracking-tighter opacity-60">13–18 pts</div>
+        </div>
+        <div id="res-tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
+          <div class="text-sm font-bold text-white">Advanced</div><div class="text-[10px] uppercase tracking-tighter opacity-60">19–24 pts</div>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a href="contact.html" class="primary-gradient text-on-primary font-bold px-10 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg">
+          Book a Consultation
+        </a>
+        <button onclick="quizRestart()" class="bg-surface-container-low border border-outline-variant/30 text-primary font-bold px-10 py-4 rounded-xl hover:bg-surface-container transition-colors">
+          Retake Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+const questions = [
+  {
+    q: "How often does your team use generative AI tools to assist in daily administrative tasks?",
+    answers: [
+      { text: "Never — we are just starting to look at it", score: 0 },
+      { text: "Rarely — only a few team members use it", score: 1 },
+      { text: "Weekly — it is part of several processes", score: 2 },
+      { text: "Daily — it is fully integrated into our stack", score: 3 }
+    ]
+  },
+  {
+    q: "Does your business have a documented AI strategy or roadmap?",
+    answers: [
+      { text: "No — we haven't thought about it formally", score: 0 },
+      { text: "We've discussed it but nothing is written down", score: 1 },
+      { text: "We have an informal plan in place", score: 2 },
+      { text: "Yes — a formal, reviewed AI strategy exists", score: 3 }
+    ]
+  },
+  {
+    q: "How would you describe your team's awareness of current AI capabilities?",
+    answers: [
+      { text: "Most people have little to no awareness", score: 0 },
+      { text: "A few individuals follow AI developments", score: 1 },
+      { text: "Most of the team has a working understanding", score: 2 },
+      { text: "The team actively experiments and stays current", score: 3 }
+    ]
+  },
+  {
+    q: "How accessible and well-organised is your business data?",
+    answers: [
+      { text: "Mostly paper-based or scattered across systems", score: 0 },
+      { text: "Partially digital but inconsistently structured", score: 1 },
+      { text: "Mostly digital with some structure in place", score: 2 },
+      { text: "Clean, structured, and readily accessible", score: 3 }
+    ]
+  },
+  {
+    q: "What is your primary goal for adopting AI in your business?",
+    answers: [
+      { text: "I'm not sure yet — still exploring options", score: 0 },
+      { text: "Reduce manual admin and save time", score: 1 },
+      { text: "Improve customer experience or service delivery", score: 2 },
+      { text: "Drive competitive advantage and revenue growth", score: 3 }
+    ]
+  },
+  {
+    q: "How would you describe the technology your business currently uses?",
+    answers: [
+      { text: "Mostly legacy tools — little cloud or modern software", score: 0 },
+      { text: "A mix of old and new, not fully integrated", score: 1 },
+      { text: "Mostly modern tools with some integration", score: 2 },
+      { text: "Cloud-native, integrated, and well-maintained", score: 3 }
+    ]
+  },
+  {
+    q: "What is your biggest concern about adopting AI?",
+    answers: [
+      { text: "Cost — we don't have the budget for it", score: 0 },
+      { text: "Complexity — it feels too technical for our team", score: 1 },
+      { text: "Risk — data privacy and security worries us", score: 2 },
+      { text: "Speed — we want to move faster than we currently are", score: 3 }
+    ]
+  },
+  {
+    q: "How much of your team's time is currently spent on repetitive, manual tasks?",
+    answers: [
+      { text: "Almost everything is manual — it's a big problem", score: 0 },
+      { text: "A significant amount — we'd love to automate more", score: 1 },
+      { text: "Some areas are manual but it's manageable", score: 2 },
+      { text: "Very little — we've already automated most things", score: 3 }
+    ]
+  }
+];
+
+let current = 0;
+let scores = new Array(questions.length).fill(null);
+let selectedIndices = new Array(questions.length).fill(null);
+
+function renderQuestion() {
+  const q = questions[current];
+  const pct = Math.round((current / questions.length) * 100);
+
+  document.getElementById('stage-label').textContent = `Stage ${current + 1} of ${questions.length}`;
+  document.getElementById('pct-label').textContent = `${pct}% Complete`;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('question-text').textContent = `"${q.q}"`;
+
+  const answersEl = document.getElementById('answers');
+  answersEl.innerHTML = '';
+  q.answers.forEach((a, i) => {
+    const btn = document.createElement('button');
+    const isSelected = selectedIndices[current] === i;
+    btn.className = `w-full text-left p-4 rounded-xl border transition-all text-on-surface ${
+      isSelected
+        ? 'border-2 border-primary bg-primary/10 text-white font-semibold'
+        : 'border-outline-variant/30 hover:border-primary hover:bg-primary/5'
+    }`;
+    btn.textContent = a.text;
+    btn.onclick = () => selectAnswer(i, a.score);
+    answersEl.appendChild(btn);
+  });
+
+  const backBtn = document.getElementById('btn-back');
+  if (current === 0) {
+    backBtn.classList.add('opacity-0', 'pointer-events-none');
+  } else {
+    backBtn.classList.remove('opacity-0', 'pointer-events-none');
+  }
+
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.disabled = scores[current] === null;
+  const isLast = current === questions.length - 1;
+  nextBtn.innerHTML = isLast
+    ? 'See My Results <span class="material-symbols-outlined text-sm align-middle">emoji_events</span>'
+    : 'Next <span class="material-symbols-outlined text-sm align-middle">arrow_forward</span>';
+
+  updateTierIndicators();
+}
+
+function selectAnswer(idx, score) {
+  selectedIndices[current] = idx;
+  scores[current] = score;
+
+  const answersEl = document.getElementById('answers');
+  Array.from(answersEl.children).forEach((btn, i) => {
+    btn.className = i === idx
+      ? 'w-full text-left p-4 rounded-xl border-2 border-primary bg-primary/10 text-white font-semibold transition-all'
+      : 'w-full text-left p-4 rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all text-on-surface';
+  });
+
+  document.getElementById('btn-next').disabled = false;
+  updateTierIndicators();
+}
+
+function updateTierIndicators() {
+  const answered = scores.filter(s => s !== null);
+  if (answered.length === 0) return;
+  const ratio = answered.reduce((a, b) => a + b, 0) / (answered.length * 3);
+
+  ['beginner','aware','ready','advanced'].forEach(t => {
+    document.getElementById(`tier-${t}`).className =
+      'p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300';
+  });
+
+  const tier = ratio < 0.25 ? 'beginner' : ratio < 0.5 ? 'aware' : ratio < 0.75 ? 'ready' : 'advanced';
+  const el = document.getElementById(`tier-${tier}`);
+  el.className = 'p-4 rounded-xl border-2 border-primary bg-primary/5 text-center shadow-[0_0_15px_rgba(161,228,255,0.15)] opacity-100 transition-all duration-300';
+  el.querySelector('div').className = 'text-sm font-bold text-primary';
+}
+
+function quizNext() {
+  if (current < questions.length - 1) {
+    current++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function quizBack() {
+  if (current > 0) {
+    current--;
+    renderQuestion();
+  }
+}
+
+function showResults() {
+  const total = scores.reduce((a, b) => a + (b || 0), 0);
+  const max = questions.length * 3;
+  let tier, title, desc;
+
+  if (total <= 6) {
+    tier = 'beginner'; title = 'Beginner';
+    desc = "You're at the starting line — and that's perfectly fine. The biggest opportunity in your business is untapped. A discovery audit with Reece AI will map out exactly where to begin.";
+  } else if (total <= 12) {
+    tier = 'aware'; title = 'AI Aware';
+    desc = "You've seen what AI can do but haven't yet unlocked its full potential. With a clear strategy and the right tools, you could transform your operations quickly. Let's build that roadmap together.";
+  } else if (total <= 18) {
+    tier = 'ready'; title = 'AI Ready';
+    desc = "You have solid foundations in place. With targeted implementation and the right guidance, you're positioned to achieve significant efficiency gains and competitive advantage.";
+  } else {
+    tier = 'advanced'; title = 'AI Advanced';
+    desc = "Impressive — you're ahead of most SMEs. The next step is optimising and scaling what you have. Reece AI can help you identify the next frontier of AI-driven growth.";
+  }
+
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-score').textContent = `${total} / ${max} points`;
+  document.getElementById('result-desc').textContent = desc;
+
+  ['beginner','aware','ready','advanced'].forEach(t => {
+    const el = document.getElementById(`res-tier-${t}`);
+    el.className = 'p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all';
+    el.querySelector('div').className = 'text-sm font-bold text-white';
+  });
+  const activeEl = document.getElementById(`res-tier-${tier}`);
+  activeEl.className = 'p-4 rounded-xl border-2 border-primary bg-primary/5 text-center shadow-[0_0_15px_rgba(161,228,255,0.15)] opacity-100 transition-all';
+  activeEl.querySelector('div').className = 'text-sm font-bold text-primary';
+
+  document.getElementById('quiz-body').classList.add('hidden');
+  document.getElementById('quiz-results').classList.remove('hidden');
+}
+
+function quizRestart() {
+  current = 0;
+  scores = new Array(questions.length).fill(null);
+  selectedIndices = new Array(questions.length).fill(null);
+  document.getElementById('quiz-results').classList.add('hidden');
+  document.getElementById('quiz-body').classList.remove('hidden');
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+
+<!-- ④ AI ASSESSMENT -->
+<section class="py-24 px-8 bg-surface relative overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-[140px]"></div>
+  </div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 border border-primary/15 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8">
+            <span class="material-symbols-outlined text-sm">analytics</span> Fixed Price Service
+          </div>
+          <h2 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6">
+            AI Assessment
+          </h2>
+          <p class="text-xl text-on-surface-variant leading-relaxed mb-10">
+            A structured discovery session with your team, followed by a comprehensive written findings report. We identify where AI can deliver the greatest impact in your business — clearly, practically, and without the jargon.
+          </p>
+          <a href="contact.html" class="inline-flex items-center gap-3 primary-gradient text-on-primary text-xl font-bold px-10 py-5 rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+            Book Your Assessment <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-surface-container-lowest rounded-2xl p-8 border border-primary/20">
+            <p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-3">Investment</p>
+            <div class="flex items-end gap-3 mb-2">
+              <span class="text-6xl font-black text-white">£499</span>
+              <span class="text-3xl font-black text-on-surface-variant mb-2">– £699</span>
+            </div>
+            <p class="text-on-surface-variant text-sm">Priced according to business size. Fixed cost — no surprises.</p>
+          </div>
+          <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10">
+            <p class="text-white font-bold mb-6">What's included</p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Structured Discovery Session</p>
+                  <p class="text-on-surface-variant text-sm">A focused session with your team to map current operations and identify AI opportunities.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Written Findings Report</p>
+                  <p class="text-on-surface-variant text-sm">A clear, actionable report with your AI readiness level, key opportunities, and recommended next steps.</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                </div>
+                <div>
+                  <p class="text-white font-semibold">Fixed Cost — No Surprises</p>
+                  <p class="text-on-surface-variant text-sm">Transparent pricing based on business size. You know exactly what you're getting before we start.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ SPECIALIZED AI SERVICES -->
+<section class="py-24 px-8 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16 text-center">
+      <h2 class="text-4xl font-bold text-white tracking-tight">Specialized AI Services</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+        <div>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">fact_check</span>
+          <h3 class="text-xl font-bold text-white mb-2">Discovery Audit</h3>
+          <p class="text-on-surface-variant text-sm mb-6">A structured discovery audit of your business, delivered with a bespoke Implementation Proposal at a fixed cost based on your business size.</p>
+        </div>
+        <a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
         </a>
       </div>
-      <!-- Right: pricing + what's included -->
-      <div class="space-y-6">
-        <!-- Price card -->
-        <div class="bg-surface-container-lowest rounded-2xl p-8 border border-primary/20">
-          <p class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-3">Investment</p>
-          <div class="flex items-end gap-3 mb-2">
-            <span class="text-6xl font-black text-white">£499</span>
-            <span class="text-3xl font-black text-on-surface-variant mb-2">– £699</span>
-          </div>
-          <p class="text-on-surface-variant text-sm">Priced according to business size. Fixed cost — no surprises.</p>
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+        <div>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">map</span>
+          <h3 class="text-xl font-bold text-white mb-2">AI Strategy</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Tailored roadmap to integrate AI into your long-term goals.</p>
         </div>
-        <!-- What's included -->
-        <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/10">
-          <p class="text-white font-bold mb-6">What's included</p>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
-              </div>
-              <div>
-                <p class="text-white font-semibold">Structured Discovery Session</p>
-                <p class="text-on-surface-variant text-sm">A focused session with your team to map your current operations and identify AI opportunities.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
-              </div>
-              <div>
-                <p class="text-white font-semibold">Written Findings Report</p>
-                <p class="text-on-surface-variant text-sm">A clear, actionable report outlining your AI readiness, key opportunities, and recommended next steps.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1;">check_circle</span>
-              </div>
-              <div>
-                <p class="text-white font-semibold">Fixed Cost — No Surprises</p>
-                <p class="text-on-surface-variant text-sm">Transparent pricing based on business size. You know exactly what you're getting before we start.</p>
-              </div>
-            </li>
-          </ul>
+        <a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </a>
+      </div>
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+        <div>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">rocket_launch</span>
+          <h3 class="text-xl font-bold text-white mb-2">AI Implementation</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Hands-on deployment of custom AI agents and workflows.</p>
+        </div>
+        <a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </a>
+      </div>
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+        <div>
+          <span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
+          <h3 class="text-xl font-bold text-white mb-2">AI Training</h3>
+          <p class="text-on-surface-variant text-sm mb-6">Workshops and sessions to empower your staff with AI knowledge.</p>
+        </div>
+        <a href="contact.html" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+          Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ THE CORE PROMISE (BENTO GRID) -->
+<section class="py-24 px-8 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div class="md:col-span-8 p-12 bg-surface-container-high rounded-[2rem] flex flex-col justify-end relative overflow-hidden group">
+        <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+          <span class="material-symbols-outlined text-[120px]">verified_user</span>
+        </div>
+        <span class="text-primary-container font-label uppercase tracking-widest text-xs mb-4">The core promise</span>
+        <h3 class="text-4xl font-bold text-white mb-4">Built For Your Business</h3>
+        <p class="text-xl text-on-surface-variant max-w-lg">No generic templates. We build bespoke solutions that respect your existing brand voice and data privacy protocols.</p>
+      </div>
+      <div class="md:col-span-4 p-8 bg-surface-container rounded-[2rem] flex flex-col items-center justify-center text-center">
+        <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+          <span class="material-symbols-outlined text-4xl">strikethrough_s</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-2">No Jargon</h3>
+        <p class="text-on-surface-variant">We speak business, not just code. Clear communication at every step.</p>
+      </div>
+      <div class="md:col-span-4 p-8 bg-surface-container rounded-[2rem] border border-outline-variant/10">
+        <div class="text-5xl font-black text-primary mb-6">ROI</div>
+        <h3 class="text-2xl font-bold text-white mb-2">Real ROI</h3>
+        <p class="text-on-surface-variant">Tangible metrics. Reduced overhead, increased speed, and measurable growth.</p>
+      </div>
+      <div class="md:col-span-8 p-12 bg-primary-container text-on-primary-container rounded-[2rem] flex items-center gap-12">
+        <div class="hidden lg:block w-32 h-32 flex-shrink-0 bg-white/20 rounded-2xl rotate-3">
+          <img alt="Support" class="w-full h-full object-cover rounded-2xl mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8AQsQmgUsrDrKyHcGFu6xx0f0jflaqVx2rJOQO_fsfXaAuDRbKEaJCTP63KhBgtJfppED26QBRhazHEK9Ny6hLK5GdgrFfelQx5JAI_B9JoYzTVf9q3qVcDb2WgUaEdciE9pINgEzvAsEnmevv7jUU-sfgK0hY8zh2fnBhIqWFOjBkmaZ_6ahMBSUlB70nYlG5PhZ0dTghmMEYarRKsvap80GNMtQ_ONXt4zOfI7t65xVUCkJ1xCuyPjEM4ph1BbF39c9-7i7JrY"/>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold mb-3">We Stay With You</h3>
+          <p class="text-lg opacity-90 leading-relaxed">Implementation is only the beginning. We provide ongoing support and iterative improvements as AI evolves.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
 </section>
+
 </main>
+
 <!-- Footer -->
 <footer class="bg-slate-950 w-full pt-20 pb-10 px-8 flex flex-col items-center text-center space-y-4 font-['Inter'] text-sm tracking-wide">
-<div class="text-xl font-bold text-white mb-4">Reece AI</div>
-<div class="flex flex-wrap justify-center gap-6 mb-8 text-slate-500">
-<a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
-<a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
-</div>
-<div class="text-slate-500 max-w-lg mx-auto opacity-60">
-            Reece AI | Registration No: 17137008. Dedicated to providing world-class AI transformation services for businesses globally.
-        </div>
-<div class="pt-8 border-t border-outline-variant/10 w-full max-w-7xl flex justify-between items-center text-xs opacity-50">
-<p>© 2024 Reece AI. All rights reserved.</p>
-<div class="flex gap-4">
-<a href="#">Privacy</a>
-<a href="#">Terms</a>
-</div>
-</div>
+  <div class="text-xl font-bold text-white mb-4">Reece AI</div>
+  <div class="flex flex-wrap justify-center gap-6 mb-8 text-slate-500">
+    <a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
+    <a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
+  </div>
+  <div class="text-slate-500 max-w-lg mx-auto opacity-60">
+    Reece AI | Registration No: 17137008. Dedicated to providing world-class AI transformation services for businesses globally.
+  </div>
+  <div class="pt-8 border-t border-outline-variant/10 w-full max-w-7xl flex justify-between items-center text-xs opacity-50">
+    <p>© 2024 Reece AI. All rights reserved.</p>
+    <div class="flex gap-4">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+</body>
+</html>
