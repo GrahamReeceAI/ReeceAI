@@ -45,14 +45,29 @@
 <body class="antialiased overflow-x-hidden">
 
 <!-- Navigation -->
-<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] z-50 flex justify-between items-center px-8 py-3 font-['Inter'] tracking-tight">
-  <a href="index.html" class="text-2xl font-bold tracking-tighter text-white">Reece AI</a>
-  <div class="hidden md:flex gap-8">
-    <a class="text-cyan-300 font-semibold transition-colors duration-300" href="index.html">Home</a>
-    <a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
-    <a class="text-slate-400 hover:text-white transition-colors duration-300" href="contact.html">Contact</a>
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+  <div class="rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] flex justify-between items-center px-5 md:px-8 py-3">
+    <a href="index.html" class="text-xl md:text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+    <div class="hidden md:flex gap-8">
+      <a class="text-cyan-300 font-semibold transition-colors duration-300" href="index.html">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
   </div>
-  <a href="contact.html" class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
+  <div id="mobile-menu" class="hidden mt-2 rounded-2xl bg-slate-950/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.1)] p-4">
+    <div class="flex flex-col gap-1">
+      <a class="text-cyan-300 bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="index.html">Home</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="about.html">About</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="contact.html">Contact</a>
+      <a href="contact.html" class="mt-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-semibold text-center block">Get in Touch</a>
+    </div>
+  </div>
 </nav>
 
 <!-- FAB buttons -->
@@ -68,7 +83,7 @@
 <main>
 
 <!-- ① HERO -->
-<section class="relative pt-44 pb-24 px-8 flex flex-col items-center justify-center text-center">
+<section class="relative pt-32 md:pt-44 pb-16 md:pb-24 px-4 md:px-8 flex flex-col items-center justify-center text-center">
   <div class="absolute inset-0 z-0 overflow-hidden">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
   </div>
@@ -76,7 +91,7 @@
     <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-high border border-outline-variant/20 text-primary-fixed text-sm tracking-widest uppercase">
       <span class="material-symbols-outlined text-sm">verified</span> UK Registered Company
     </div>
-    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
+    <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
       AI That Works <br/><span class="text-primary-container">For Your Business</span>
     </h1>
     <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -94,7 +109,7 @@
 </section>
 
 <!-- ② HOW WE DELIVER -->
-<section id="how-we-deliver" class="py-24 bg-surface-container-low px-8">
+<section id="how-we-deliver" class="py-16 md:py-24 bg-surface-container-low px-4 md:px-8">
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
       <div class="max-w-xl">
@@ -130,8 +145,8 @@
 </section>
 
 <!-- ③ AI READINESS QUIZ -->
-<section class="py-24 bg-surface px-8 relative">
-  <div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-[2.5rem] p-12 shadow-2xl relative z-10">
+<section class="py-16 md:py-24 bg-surface px-4 md:px-8 relative">
+  <div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 shadow-2xl relative z-10">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI Readiness Quiz</h2>
       <p class="text-on-surface-variant">Discover your current standing in the AI landscape in under 2 minutes.</p>
@@ -434,18 +449,18 @@ renderQuestion();
 </script>
 
 <!-- ④ AI ASSESSMENT -->
-<section class="py-24 px-8 bg-surface relative overflow-hidden">
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface relative overflow-hidden">
   <div class="absolute inset-0 z-0">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-[140px]"></div>
   </div>
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="bg-surface-container-high rounded-[2.5rem] p-12 md:p-20 border border-primary/15 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
+    <div class="bg-surface-container-high rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 lg:p-20 border border-primary/15 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8">
             <span class="material-symbols-outlined text-sm">analytics</span> Fixed Price Service
           </div>
-          <h2 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6">
+          <h2 class="text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6">
             AI Assessment
           </h2>
           <p class="text-xl text-on-surface-variant leading-relaxed mb-10">
@@ -503,7 +518,7 @@ renderQuestion();
 </section>
 
 <!-- ⑤ SPECIALIZED AI SERVICES -->
-<section class="py-24 px-8 bg-surface-container-low">
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low">
   <div class="max-w-7xl mx-auto">
     <div class="mb-16 text-center">
       <h2 class="text-4xl font-bold text-white tracking-tight">Specialized AI Services</h2>
@@ -554,10 +569,10 @@ renderQuestion();
 </section>
 
 <!-- ⑥ THE CORE PROMISE (BENTO GRID) -->
-<section class="py-24 px-8 overflow-hidden">
+<section class="py-16 md:py-24 px-4 md:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <div class="md:col-span-8 p-12 bg-surface-container-high rounded-[2rem] flex flex-col justify-end relative overflow-hidden group">
+      <div class="md:col-span-8 p-6 md:p-12 bg-surface-container-high rounded-2xl md:rounded-[2rem] flex flex-col justify-end relative overflow-hidden group">
         <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
           <span class="material-symbols-outlined text-[120px]">verified_user</span>
         </div>
@@ -577,7 +592,7 @@ renderQuestion();
         <h3 class="text-2xl font-bold text-white mb-2">Real ROI</h3>
         <p class="text-on-surface-variant">Tangible metrics. Reduced overhead, increased speed, and measurable growth.</p>
       </div>
-      <div class="md:col-span-8 p-12 bg-primary-container text-on-primary-container rounded-[2rem] flex items-center gap-12">
+      <div class="md:col-span-8 p-6 md:p-12 bg-primary-container text-on-primary-container rounded-2xl md:rounded-[2rem] flex items-center gap-12">
         <div class="hidden lg:block w-32 h-32 flex-shrink-0 bg-white/20 rounded-2xl rotate-3">
           <img alt="Support" class="w-full h-full object-cover rounded-2xl mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8AQsQmgUsrDrKyHcGFu6xx0f0jflaqVx2rJOQO_fsfXaAuDRbKEaJCTP63KhBgtJfppED26QBRhazHEK9Ny6hLK5GdgrFfelQx5JAI_B9JoYzTVf9q3qVcDb2WgUaEdciE9pINgEzvAsEnmevv7jUU-sfgK0hY8zh2fnBhIqWFOjBkmaZ_6ahMBSUlB70nYlG5PhZ0dTghmMEYarRKsvap80GNMtQ_ONXt4zOfI7t65xVUCkJ1xCuyPjEM4ph1BbF39c9-7i7JrY"/>
         </div>
