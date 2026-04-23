@@ -129,30 +129,30 @@
 <h2 class="text-3xl font-bold tracking-tight mb-2">Inquiry Form</h2>
 <p class="text-on-surface-variant">Fields marked with * are required.</p>
 </div>
-<form class="space-y-8">
+<form action="https://formspree.io/f/mbdqqrpo" method="POST" class="space-y-8">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Name *</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="John Doe" type="text"/>
+<input name="name" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="John Doe" type="text" required/>
 </div>
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Company Name</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="Design Studio Ltd." type="text"/>
+<input name="company" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="Design Studio Ltd." type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Email Address *</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="john@example.com" type="email"/>
+<input name="email" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="john@example.com" type="email" required/>
 </div>
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Phone Number</label>
-<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="+44 7700 000000" type="tel"/>
+<input name="phone" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600" placeholder="+44 7700 000000" type="tel"/>
 </div>
 </div>
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Business Sector</label>
-<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 appearance-none">
+<select name="sector" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 appearance-none">
 <option value="">Select your industry...</option>
 <option>Accounting &amp; Finance</option>
 <option>Architecture &amp; Engineering</option>
@@ -177,7 +177,7 @@
 </div>
 <div class="relative">
 <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-2">Biggest Challenge</label>
-<textarea class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600 resize-none" placeholder="Tell us what you're trying to solve..." rows="4"></textarea>
+<textarea name="challenge" class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 transition-all text-on-surface py-3 px-0 placeholder:text-slate-600 resize-none" placeholder="Tell us what you're trying to solve..." rows="4"></textarea>
 </div>
 <div class="flex items-center gap-4 pt-4">
 <button class="gradient-button text-on-primary px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(161,228,255,0.4)] transition-all" type="submit">
