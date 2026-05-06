@@ -1228,22 +1228,33 @@ function downloadPDF() {
   // Next step
   y += 5;
   doc.setFillColor(0, 84, 106);
-  doc.roundedRect(M, y, W - M*2, 40, 4, 4, 'F');
+  doc.roundedRect(M, y, W - M*2, 28, 4, 4, 'F');
   doc.setTextColor(161, 228, 255);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'bold');
-  doc.text('Recommended Next Step', M + 8, y + 11);
+  doc.text('Recommended Next Step', M + 8, y + 10);
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
   if (score <= 6) {
-    doc.text('Book a free 15-minute call with Graham Tydeman.', M + 8, y + 21);
-    doc.text('No obligation. Just a conversation about where AI could help you.', M + 8, y + 28);
-    doc.setTextColor(161, 228, 255);
-    doc.text('calendly.com/graham-reeceai/ai-assessment', M + 8, y + 36);
+    doc.text('Book a free 15-minute call with Graham — no obligation, just a conversation about where AI could help you.', M + 8, y + 20, { maxWidth: W - M*2 - 16 });
+
+    // Clickable button
+    const btnY = y + 32;
+    const btnW = 90;
+    const btnH = 12;
+    const btnX = W / 2 - btnW / 2;
+    doc.setFillColor(0, 207, 255);
+    doc.roundedRect(btnX, btnY, btnW, btnH, 3, 3, 'F');
+    doc.setTextColor(0, 53, 68);
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('BOOK FREE 15 MINUTE CALL', W / 2, btnY + 8, { align: 'center' });
+    doc.link(btnX, btnY, btnW, btnH, { url: 'https://calendly.com/graham-reeceai/ai-assessment' });
+    y += 20; // extra space for the button
   } else {
-    doc.text('You are ahead of the curve. Stay sharp as AI evolves.', M + 8, y + 21);
-    doc.text('Subscribe to daily AI insights at reeceai.ai', M + 8, y + 29);
+    doc.text('You are ahead of the curve. Stay sharp as AI evolves.', M + 8, y + 20);
+    doc.text('Subscribe to daily AI insights at reeceai.ai', M + 8, y + 27);
   }
 
   // Footer
