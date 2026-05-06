@@ -154,309 +154,101 @@
   </div>
 </section>
 
-<!-- ③ AI READINESS QUIZ -->
-<section class="py-16 md:py-24 bg-surface px-4 md:px-8 relative">
-  <div class="max-w-4xl mx-auto bg-surface-container-lowest rounded-2xl md:rounded-[2.5rem] p-6 md:p-12 shadow-2xl relative z-10">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI Readiness Quiz</h2>
-      <p class="text-on-surface-variant">Discover your current standing in the AI landscape in under 2 minutes.</p>
+<!-- ③ AI READINESS ASSESSMENT CTA -->
+<section class="py-16 md:py-28 bg-surface px-4 md:px-8 relative overflow-hidden">
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/6 rounded-full blur-[140px]"></div>
+  </div>
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <!-- Eyebrow -->
+    <div class="text-center mb-10">
+      <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-primary font-semibold bg-primary/8 border border-primary/20 px-5 py-2 rounded-full mb-6">
+        <span class="material-symbols-outlined text-sm">quiz</span>
+        Free Assessment — Takes Under 3 Minutes
+      </span>
+      <h2 class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+        Most SMEs Are Losing 5–10 Hours a Week<br class="hidden md:block"/> to Work AI Could Do For Free.
+      </h2>
+      <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        The question isn't whether AI could help your business. It's <em class="text-white not-italic font-semibold">exactly where</em> — and how much it's already costing you not to know.
+      </p>
     </div>
 
-    <!-- Questions -->
-    <div id="quiz-body" class="space-y-10">
-      <div class="relative pt-1">
-        <div class="flex mb-4 items-center justify-between">
-          <span id="stage-label" class="text-xs font-semibold py-1 px-2 uppercase rounded-full text-primary bg-primary/10">Stage 1 of 8</span>
-          <span id="pct-label" class="text-xs font-semibold text-primary">0% Complete</span>
-        </div>
-        <div class="overflow-hidden h-2 mb-4 rounded bg-surface-container">
-          <div id="progress-bar" class="h-full primary-gradient transition-all duration-500" style="width:0%"></div>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div id="tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-          <div class="text-sm font-bold text-white">Beginner</div>
-          <div class="text-[10px] uppercase tracking-tighter opacity-60">No AI Tools</div>
-        </div>
-        <div id="tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-          <div class="text-sm font-bold text-white">Aware</div>
-          <div class="text-[10px] uppercase tracking-tighter opacity-60">Occasional Use</div>
-        </div>
-        <div id="tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-          <div class="text-sm font-bold text-white">Ready</div>
-          <div class="text-[10px] uppercase tracking-tighter opacity-60">Standard Ops</div>
-        </div>
-        <div id="tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300">
-          <div class="text-sm font-bold text-white">Advanced</div>
-          <div class="text-[10px] uppercase tracking-tighter opacity-60">Full Integration</div>
-        </div>
-      </div>
-      <div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20">
-        <p id="question-text" class="text-xl text-white font-medium mb-6"></p>
-        <div id="answers" class="grid gap-3"></div>
-      </div>
-      <div class="flex justify-between items-center pt-2">
-        <button id="btn-back" onclick="quizBack()" class="text-on-surface-variant hover:text-primary font-semibold flex items-center gap-2 transition-colors opacity-0 pointer-events-none">
-          <span class="material-symbols-outlined text-sm">arrow_back</span> Back
-        </button>
-        <button id="btn-next" onclick="quizNext()" disabled class="primary-gradient text-on-primary font-bold px-8 py-3 rounded-xl hover:scale-105 transition-transform disabled:opacity-40 disabled:scale-100 disabled:cursor-not-allowed">
-          Next <span class="material-symbols-outlined text-sm align-middle">arrow_forward</span>
-        </button>
-      </div>
-    </div>
+    <!-- Card -->
+    <div class="bg-surface-container-high border border-primary/15 rounded-2xl md:rounded-[2.5rem] p-8 md:p-14 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
 
-    <!-- Results -->
-    <div id="quiz-results" class="hidden text-center space-y-8">
-      <div class="w-24 h-24 rounded-full mx-auto flex items-center justify-center primary-gradient">
-        <span class="material-symbols-outlined text-5xl text-on-primary" style="font-variation-settings:'FILL' 1;">emoji_events</span>
-      </div>
-      <div>
-        <p class="text-primary uppercase tracking-widest text-sm font-bold mb-2">Your AI Readiness Score</p>
-        <h3 id="result-title" class="text-5xl font-black text-white mb-3"></h3>
-        <p id="result-score" class="text-2xl text-primary font-bold mb-4"></p>
-        <p id="result-desc" class="text-on-surface-variant text-lg max-w-xl mx-auto leading-relaxed"></p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div id="res-tier-beginner" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-          <div class="text-sm font-bold text-white">Beginner</div><div class="text-[10px] uppercase tracking-tighter opacity-60">0–6 pts</div>
+        <!-- Left: what you get -->
+        <div class="space-y-7">
+          <h3 class="text-2xl font-bold text-white">Answer 15 questions. Walk away with:</h3>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-primary" style="font-size:18px">schedule</span>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Your AI Readiness Score out of 10</p>
+                <p class="text-on-surface-variant text-sm">See exactly where you stand versus other UK SMEs.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-primary" style="font-size:18px">lightbulb</span>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">Personalised insights for your business</p>
+                <p class="text-on-surface-variant text-sm">Not generic advice — specific to your actual answers.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-primary" style="font-size:18px">map</span>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">A clear recommended next step</p>
+                <p class="text-on-surface-variant text-sm">Know exactly what to do — and in what order.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-primary" style="font-size:18px">download</span>
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">A downloadable PDF results report</p>
+                <p class="text-on-surface-variant text-sm">Keep it, share it, act on it.</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div id="res-tier-aware" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-          <div class="text-sm font-bold text-white">Aware</div><div class="text-[10px] uppercase tracking-tighter opacity-60">7–12 pts</div>
+
+        <!-- Right: CTA -->
+        <div class="flex flex-col items-center text-center gap-6">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary-container/10 border border-primary/30 flex items-center justify-center mb-2">
+            <span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings:'FILL' 1">psychology</span>
+          </div>
+          <div>
+            <p class="text-white font-bold text-2xl mb-2">33% of UK SMEs<br/>have implemented AI.</p>
+            <p class="text-on-surface-variant text-sm">Those that have report a <strong class="text-primary">40% reduction</strong> in manual task time.</p>
+          </div>
+          <a href="quiz.html" class="w-full inline-flex items-center justify-center gap-3 bg-primary-container text-on-primary-container text-lg font-bold px-8 py-5 rounded-full shadow-[0_0_40px_rgba(0,207,255,0.25)] hover:shadow-[0_0_60px_rgba(0,207,255,0.4)] hover:scale-105 active:scale-95 transition-all">
+            Find Out Where You Stand
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <div class="flex flex-col gap-2 text-xs text-on-surface-variant">
+            <span class="flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:14px">check_circle</span>Free to take</span>
+            <span class="flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:14px">check_circle</span>Immediate personalised results</span>
+            <span class="flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:14px">check_circle</span>No obligation whatsoever</span>
+          </div>
         </div>
-        <div id="res-tier-ready" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-          <div class="text-sm font-bold text-white">Ready</div><div class="text-[10px] uppercase tracking-tighter opacity-60">13–18 pts</div>
-        </div>
-        <div id="res-tier-advanced" class="p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all">
-          <div class="text-sm font-bold text-white">Advanced</div><div class="text-[10px] uppercase tracking-tighter opacity-60">19–24 pts</div>
-        </div>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-        <a href="contact.html" class="primary-gradient text-on-primary font-bold px-10 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg">
-          Book a Consultation
-        </a>
-        <button onclick="quizRestart()" class="bg-surface-container-low border border-outline-variant/30 text-primary font-bold px-10 py-4 rounded-xl hover:bg-surface-container transition-colors">
-          Retake Quiz
-        </button>
+
       </div>
     </div>
   </div>
 </section>
 
-<script>
-const questions = [
-  {
-    q: "How often does your team use generative AI tools to assist in daily administrative tasks?",
-    answers: [
-      { text: "Never — we are just starting to look at it", score: 0 },
-      { text: "Rarely — only a few team members use it", score: 1 },
-      { text: "Weekly — it is part of several processes", score: 2 },
-      { text: "Daily — it is fully integrated into our stack", score: 3 }
-    ]
-  },
-  {
-    q: "Does your business have a documented AI strategy or roadmap?",
-    answers: [
-      { text: "No — we haven't thought about it formally", score: 0 },
-      { text: "We've discussed it but nothing is written down", score: 1 },
-      { text: "We have an informal plan in place", score: 2 },
-      { text: "Yes — a formal, reviewed AI strategy exists", score: 3 }
-    ]
-  },
-  {
-    q: "How would you describe your team's awareness of current AI capabilities?",
-    answers: [
-      { text: "Most people have little to no awareness", score: 0 },
-      { text: "A few individuals follow AI developments", score: 1 },
-      { text: "Most of the team has a working understanding", score: 2 },
-      { text: "The team actively experiments and stays current", score: 3 }
-    ]
-  },
-  {
-    q: "How accessible and well-organised is your business data?",
-    answers: [
-      { text: "Mostly paper-based or scattered across systems", score: 0 },
-      { text: "Partially digital but inconsistently structured", score: 1 },
-      { text: "Mostly digital with some structure in place", score: 2 },
-      { text: "Clean, structured, and readily accessible", score: 3 }
-    ]
-  },
-  {
-    q: "What is your primary goal for adopting AI in your business?",
-    answers: [
-      { text: "I'm not sure yet — still exploring options", score: 0 },
-      { text: "Reduce manual admin and save time", score: 1 },
-      { text: "Improve customer experience or service delivery", score: 2 },
-      { text: "Drive competitive advantage and revenue growth", score: 3 }
-    ]
-  },
-  {
-    q: "How would you describe the technology your business currently uses?",
-    answers: [
-      { text: "Mostly legacy tools — little cloud or modern software", score: 0 },
-      { text: "A mix of old and new, not fully integrated", score: 1 },
-      { text: "Mostly modern tools with some integration", score: 2 },
-      { text: "Cloud-native, integrated, and well-maintained", score: 3 }
-    ]
-  },
-  {
-    q: "What is your biggest concern about adopting AI?",
-    answers: [
-      { text: "Cost — we don't have the budget for it", score: 0 },
-      { text: "Complexity — it feels too technical for our team", score: 1 },
-      { text: "Risk — data privacy and security worries us", score: 2 },
-      { text: "Speed — we want to move faster than we currently are", score: 3 }
-    ]
-  },
-  {
-    q: "How much of your team's time is currently spent on repetitive, manual tasks?",
-    answers: [
-      { text: "Almost everything is manual — it's a big problem", score: 0 },
-      { text: "A significant amount — we'd love to automate more", score: 1 },
-      { text: "Some areas are manual but it's manageable", score: 2 },
-      { text: "Very little — we've already automated most things", score: 3 }
-    ]
-  }
-];
 
-let current = 0;
-let scores = new Array(questions.length).fill(null);
-let selectedIndices = new Array(questions.length).fill(null);
 
-function renderQuestion() {
-  const q = questions[current];
-  const pct = Math.round((current / questions.length) * 100);
-
-  document.getElementById('stage-label').textContent = `Stage ${current + 1} of ${questions.length}`;
-  document.getElementById('pct-label').textContent = `${pct}% Complete`;
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('question-text').textContent = `"${q.q}"`;
-
-  const answersEl = document.getElementById('answers');
-  answersEl.innerHTML = '';
-  q.answers.forEach((a, i) => {
-    const btn = document.createElement('button');
-    const isSelected = selectedIndices[current] === i;
-    btn.className = `w-full text-left p-4 rounded-xl border transition-all text-on-surface ${
-      isSelected
-        ? 'border-2 border-primary bg-primary/10 text-white font-semibold'
-        : 'border-outline-variant/30 hover:border-primary hover:bg-primary/5'
-    }`;
-    btn.textContent = a.text;
-    btn.onclick = () => selectAnswer(i, a.score);
-    answersEl.appendChild(btn);
-  });
-
-  const backBtn = document.getElementById('btn-back');
-  if (current === 0) {
-    backBtn.classList.add('opacity-0', 'pointer-events-none');
-  } else {
-    backBtn.classList.remove('opacity-0', 'pointer-events-none');
-  }
-
-  const nextBtn = document.getElementById('btn-next');
-  nextBtn.disabled = scores[current] === null;
-  const isLast = current === questions.length - 1;
-  nextBtn.innerHTML = isLast
-    ? 'See My Results <span class="material-symbols-outlined text-sm align-middle">emoji_events</span>'
-    : 'Next <span class="material-symbols-outlined text-sm align-middle">arrow_forward</span>';
-
-  updateTierIndicators();
-}
-
-function selectAnswer(idx, score) {
-  selectedIndices[current] = idx;
-  scores[current] = score;
-
-  const answersEl = document.getElementById('answers');
-  Array.from(answersEl.children).forEach((btn, i) => {
-    btn.className = i === idx
-      ? 'w-full text-left p-4 rounded-xl border-2 border-primary bg-primary/10 text-white font-semibold transition-all'
-      : 'w-full text-left p-4 rounded-xl border border-outline-variant/30 hover:border-primary hover:bg-primary/5 transition-all text-on-surface';
-  });
-
-  document.getElementById('btn-next').disabled = false;
-  updateTierIndicators();
-}
-
-function updateTierIndicators() {
-  const answered = scores.filter(s => s !== null);
-  if (answered.length === 0) return;
-  const ratio = answered.reduce((a, b) => a + b, 0) / (answered.length * 3);
-
-  ['beginner','aware','ready','advanced'].forEach(t => {
-    document.getElementById(`tier-${t}`).className =
-      'p-4 rounded-xl border border-outline-variant/30 text-center opacity-40 transition-all duration-300';
-  });
-
-  const tier = ratio < 0.25 ? 'beginner' : ratio < 0.5 ? 'aware' : ratio < 0.75 ? 'ready' : 'advanced';
-  const el = document.getElementById(`tier-${tier}`);
-  el.className = 'p-4 rounded-xl border-2 border-primary bg-primary/5 text-center shadow-[0_0_15px_rgba(161,228,255,0.15)] opacity-100 transition-all duration-300';
-  el.querySelector('div').className = 'text-sm font-bold text-primary';
-}
-
-function quizNext() {
-  if (current < questions.length - 1) {
-    current++;
-    renderQuestion();
-  } else {
-    showResults();
-  }
-}
-
-function quizBack() {
-  if (current > 0) {
-    current--;
-    renderQuestion();
-  }
-}
-
-function showResults() {
-  const total = scores.reduce((a, b) => a + (b || 0), 0);
-  const max = questions.length * 3;
-  let tier, title, desc;
-
-  if (total <= 6) {
-    tier = 'beginner'; title = 'Beginner';
-    desc = "You're at the starting line — and that's perfectly fine. The biggest opportunity in your business is untapped. A discovery audit with Reece AI will map out exactly where to begin.";
-  } else if (total <= 12) {
-    tier = 'aware'; title = 'AI Aware';
-    desc = "You've seen what AI can do but haven't yet unlocked its full potential. With a clear strategy and the right tools, you could transform your operations quickly. Let's build that roadmap together.";
-  } else if (total <= 18) {
-    tier = 'ready'; title = 'AI Ready';
-    desc = "You have solid foundations in place. With targeted implementation and the right guidance, you're positioned to achieve significant efficiency gains and competitive advantage.";
-  } else {
-    tier = 'advanced'; title = 'AI Advanced';
-    desc = "Impressive — you're ahead of most SMEs. The next step is optimising and scaling what you have. Reece AI can help you identify the next frontier of AI-driven growth.";
-  }
-
-  document.getElementById('result-title').textContent = title;
-  document.getElementById('result-score').textContent = `${total} / ${max} points`;
-  document.getElementById('result-desc').textContent = desc;
-
-  ['beginner','aware','ready','advanced'].forEach(t => {
-    const el = document.getElementById(`res-tier-${t}`);
-    el.className = 'p-4 rounded-xl border border-outline-variant/30 text-center opacity-30 transition-all';
-    el.querySelector('div').className = 'text-sm font-bold text-white';
-  });
-  const activeEl = document.getElementById(`res-tier-${tier}`);
-  activeEl.className = 'p-4 rounded-xl border-2 border-primary bg-primary/5 text-center shadow-[0_0_15px_rgba(161,228,255,0.15)] opacity-100 transition-all';
-  activeEl.querySelector('div').className = 'text-sm font-bold text-primary';
-
-  document.getElementById('quiz-body').classList.add('hidden');
-  document.getElementById('quiz-results').classList.remove('hidden');
-}
-
-function quizRestart() {
-  current = 0;
-  scores = new Array(questions.length).fill(null);
-  selectedIndices = new Array(questions.length).fill(null);
-  document.getElementById('quiz-results').classList.add('hidden');
-  document.getElementById('quiz-body').classList.remove('hidden');
-  renderQuestion();
-}
-
-renderQuestion();
-</script>
 
 <!-- ④ AI ASSESSMENT -->
 <section class="py-16 md:py-24 px-4 md:px-8 bg-surface relative overflow-hidden">
