@@ -723,6 +723,20 @@ function startQuiz() {
   state.answers[12] = [];
   state.currentQ = 0;
 
+  // Early lead capture — fires immediately so the contact is never lost even if they drop off
+  fetch('https://formspree.io/f/mbdqqrpo', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: `New Assessment Started — ${first} ${last}`,
+      name: `${first} ${last}`,
+      email: email,
+      business: business || 'Not provided',
+      status: 'Assessment started — not yet completed',
+      source: 'quiz-funnel-start'
+    })
+  }).catch(() => {}); // Silent fail
+
   goTo('s-questions');
   renderQuestion(0);
 }
