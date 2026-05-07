@@ -12,6 +12,8 @@
 <meta property="og:type" content="website"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('UrY-yc_tcP_TVtmNC');</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -1082,6 +1084,16 @@ function showResults() {
 
   // Auto-submit to Formspree
   submitToFormspree(score, cat.label, insights);
+
+  // Send follow-up email via EmailJS
+  emailjs.send('service_w5x6js6', 'template_zz8tcht', {
+    to_email: state.email,
+    first_name: state.firstName,
+    score: score,
+    category: cat.label,
+    insight_1: insights[0] || '',
+    insight_2: insights[1] || ''
+  }).catch(() => {}); // Silent fail — never disrupt the user experience
 }
 
 // ==================== FORMSPREE SUBMISSION ====================
