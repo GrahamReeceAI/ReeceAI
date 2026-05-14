@@ -1000,40 +1000,44 @@ function showResults() {
   const videoSection = document.getElementById('video-section');
   if (score <= 6) {
     videoSection.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 border border-outline-variant/20">
-        <div class="max-w-2xl mx-auto text-center">
-          <h3 class="text-xl font-bold text-white mb-2">A Personal Message For You</h3>
-          <p class="text-on-surface-variant text-sm mb-6">Graham has a short message for businesses at your stage.</p>
-          <div class="video-placeholder rounded-xl overflow-hidden aspect-video flex items-center justify-center relative mb-4">
-            <!-- GRAHAM: Replace the div below with your YouTube embed iframe -->
-            <!-- Example: <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" class="w-full h-full" frameborder="0" allowfullscreen></iframe> -->
-            <div class="text-center">
-              <button class="play-btn w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
-              </button>
-              <p class="text-on-surface-variant text-sm">Video message from Graham</p>
-            </div>
+      <div class="bg-surface-container rounded-2xl md:rounded-3xl border border-primary/20 overflow-hidden">
+        <div class="bg-gradient-to-r from-primary/10 to-transparent px-8 py-5 border-b border-primary/10 flex items-center gap-3">
+          <img src="images/graham-tydeman.jpg" alt="Graham Tydeman" class="w-10 h-10 rounded-full object-cover grayscale" />
+          <div>
+            <p class="text-white font-bold text-sm">Graham Tydeman</p>
+            <p class="text-primary text-xs">Founder &amp; Director, Reece AI</p>
           </div>
-          <p class="text-primary font-semibold text-sm">You are exactly the type of business Reece AI was built for.</p>
+        </div>
+        <div class="p-8 md:p-10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
+            <p>First of all — well done for taking the time to do this. Most business owners know AI could help them but never stop to actually find out where. You just did, and that matters.</p>
+            <p>Based on your score, there is a <span class="text-white font-semibold">real, significant opportunity</span> in your business right now. The good news is that you don't need to have everything figured out. You just need to know where to start — and that's exactly what I help with.</p>
+            <p>I spent over 20 years working at the heart of global financial markets, where the biggest institutions had one clear advantage over everyone else: the best tools. AI is that advantage now. And the businesses that move first are the ones that pull ahead.</p>
+            <p class="text-white font-semibold">You are exactly the type of business Reece AI was built for.</p>
+            <p>The single best next step I can suggest is a free 15-minute call. No pitch, no pressure — just a straightforward conversation about your results and where AI could make the biggest difference for you. Book it below. I look forward to speaking with you.</p>
+          </div>
         </div>
       </div>
     `;
   } else {
     videoSection.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 border border-outline-variant/20">
-        <div class="max-w-2xl mx-auto text-center">
-          <h3 class="text-xl font-bold text-white mb-2">You're Ahead of the Curve</h3>
-          <p class="text-on-surface-variant text-sm mb-6">A short message from Graham.</p>
-          <div class="video-placeholder rounded-xl overflow-hidden aspect-video flex items-center justify-center relative mb-4">
-            <!-- GRAHAM: Replace with your YouTube embed iframe for the high-scorer video -->
-            <div class="text-center">
-              <button class="play-btn w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1">play_arrow</span>
-              </button>
-              <p class="text-on-surface-variant text-sm">Video message from Graham</p>
-            </div>
+      <div class="bg-surface-container rounded-2xl md:rounded-3xl border border-outline-variant/20 overflow-hidden">
+        <div class="bg-gradient-to-r from-primary/10 to-transparent px-8 py-5 border-b border-outline-variant/10 flex items-center gap-3">
+          <img src="images/graham-tydeman.jpg" alt="Graham Tydeman" class="w-10 h-10 rounded-full object-cover grayscale" />
+          <div>
+            <p class="text-white font-bold text-sm">Graham Tydeman</p>
+            <p class="text-primary text-xs">Founder &amp; Director, Reece AI</p>
           </div>
-          <p class="text-on-surface-variant text-sm">You've made strong progress. While we may not be the right fit right now, here's what we'd suggest.</p>
+        </div>
+        <div class="p-8 md:p-10">
+          <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+          <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
+            <p>Genuinely — congratulations. Your score puts you well ahead of the majority of UK SMEs. The fact that you've already started thinking seriously about AI, and have begun to embed it into how you work, is a real competitive advantage. Most of your competitors haven't.</p>
+            <p>Where businesses at your stage typically get caught out is <span class="text-white font-semibold">what happens next</span>. AI is moving faster than most people realise. The tools that are cutting-edge today will be baseline in 12 months. Staying ahead means staying informed — and knowing which developments are actually relevant to your business.</p>
+            <p>My honest recommendation at your stage is to stay sharp. Subscribe to our daily AI insights email below — it's free, it's curated specifically for business owners who are already implementing AI, and it will keep you ahead of the curve without having to wade through the noise yourself.</p>
+            <p class="text-white font-semibold">You've made a strong start. The next step is making sure you don't stand still.</p>
+          </div>
         </div>
       </div>
     `;
