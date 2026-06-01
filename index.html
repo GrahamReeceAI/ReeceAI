@@ -46,6 +46,21 @@
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
   .primary-gradient { background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%); }
   body { background-color: #081327; color: #d8e2fe; font-family: 'Inter', sans-serif; }
+
+  /* Particle canvas */
+  #particle-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+
+  /* Typing cursor */
+  #typing-phrase::after { content: '|'; display: inline-block; color: #00cfff; animation: blink 0.8s step-end infinite; margin-left: 2px; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -92,11 +107,12 @@
 <!-- ① HERO -->
 <section class="relative pt-32 md:pt-44 pb-16 md:pb-24 px-4 md:px-8 flex flex-col items-center justify-center text-center">
   <div class="absolute inset-0 z-0 overflow-hidden">
+    <canvas id="particle-canvas"></canvas>
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
   </div>
   <div class="relative z-10 max-w-4xl">
     <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.95]">
-      AI That Works <br/><span class="text-primary-container">For Your Business</span>
+      AI That Works <br/><span class="text-primary-container" id="typing-phrase">For Your Business</span>
     </h1>
     <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
       Stop guessing. Start scaling. We bridge the gap between complex AI technology and real-world business results.
@@ -124,7 +140,7 @@
   <div class="max-w-5xl mx-auto relative z-10">
 
     <!-- Eyebrow -->
-    <div class="text-center mb-10">
+    <div class="text-center mb-10 reveal">
       <span class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-primary font-semibold bg-primary/8 border border-primary/20 px-5 py-2 rounded-full mb-6">
         <span class="material-symbols-outlined text-sm">quiz</span>
         Free Assessment — Takes Under 3 Minutes
@@ -138,7 +154,7 @@
     </div>
 
     <!-- Card -->
-    <div class="bg-surface-container-high border border-primary/15 rounded-2xl md:rounded-[2.5rem] p-8 md:p-14 shadow-[0_0_80px_rgba(161,228,255,0.06)]">
+    <div class="bg-surface-container-high border border-primary/15 rounded-2xl md:rounded-[2.5rem] p-8 md:p-14 shadow-[0_0_80px_rgba(161,228,255,0.06)] reveal">
       <div class="grid md:grid-cols-2 gap-12 items-center">
 
         <!-- Left: what you get -->
@@ -215,7 +231,7 @@
 <!-- ③ HOW WE DELIVER -->
 <section id="how-we-deliver" class="py-16 md:py-24 bg-surface-container-low px-4 md:px-8">
   <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-20 gap-6 md:gap-8">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-20 gap-6 md:gap-8 reveal">
       <div class="max-w-xl">
         <span class="text-primary tracking-[0.2em] uppercase text-sm mb-4 block">How we deliver</span>
         <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Our Three-Step Professional Framework</h2>
@@ -223,21 +239,21 @@
       <p class="text-on-surface-variant text-lg max-w-sm">Results-focused methodology designed to integrate seamlessly into your existing workflows.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary">
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary reveal reveal-delay-1">
         <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
           <span class="material-symbols-outlined">insights</span>
         </div>
         <h3 class="text-2xl font-bold text-white mb-4">Strategy</h3>
         <p class="text-on-surface-variant leading-relaxed">We identify the highest-impact AI opportunities unique to your operational structure.</p>
       </div>
-      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-cyan-500">
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-cyan-500 reveal reveal-delay-2">
         <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-500 mb-6">
           <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
         </div>
         <h3 class="text-2xl font-bold text-white mb-4">Transformation</h3>
         <p class="text-on-surface-variant leading-relaxed">Deployment of custom AI tools and automated pipelines that drive immediate efficiency gains.</p>
       </div>
-      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary-fixed-dim">
+      <div class="p-8 bg-surface-container rounded-2xl border-l-4 border-primary-fixed-dim reveal reveal-delay-3">
         <div class="w-12 h-12 rounded-lg bg-primary-fixed-dim/10 flex items-center justify-center text-primary-fixed-dim mb-6">
           <span class="material-symbols-outlined">school</span>
         </div>
@@ -317,11 +333,11 @@
 <!-- ⑤ SPECIALIZED AI SERVICES -->
 <section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low">
   <div class="max-w-7xl mx-auto">
-    <div class="mb-16 text-center">
+    <div class="mb-16 text-center reveal">
       <h2 class="text-4xl font-bold text-white tracking-tight">Specialised AI Services</h2>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group reveal reveal-delay-1">
         <div>
           <span class="material-symbols-outlined text-primary mb-4 text-3xl">fact_check</span>
           <h3 class="text-xl font-bold text-white mb-2">Free Discovery Call</h3>
@@ -331,7 +347,7 @@
           Book Now <span class="material-symbols-outlined text-sm">chevron_right</span>
         </a>
       </div>
-      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group reveal reveal-delay-2">
         <div>
           <span class="material-symbols-outlined text-primary mb-4 text-3xl">map</span>
           <h3 class="text-xl font-bold text-white mb-2">AI Strategy</h3>
@@ -341,7 +357,7 @@
           Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
         </a>
       </div>
-      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group reveal reveal-delay-3">
         <div>
           <span class="material-symbols-outlined text-primary mb-4 text-3xl">rocket_launch</span>
           <h3 class="text-xl font-bold text-white mb-2">AI Implementation</h3>
@@ -351,7 +367,7 @@
           Learn More <span class="material-symbols-outlined text-sm">chevron_right</span>
         </a>
       </div>
-      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group">
+      <div class="bg-surface-container p-6 rounded-2xl hover:bg-surface-container-high transition-all flex flex-col justify-between group reveal reveal-delay-4">
         <div>
           <span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
           <h3 class="text-xl font-bold text-white mb-2">AI Training</h3>
@@ -369,7 +385,7 @@
 <section class="py-16 md:py-24 px-4 md:px-8 overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-      <div class="md:col-span-8 p-6 md:p-12 bg-surface-container-high rounded-2xl md:rounded-[2rem] flex flex-col justify-end relative overflow-hidden group">
+      <div class="md:col-span-8 p-6 md:p-12 bg-surface-container-high rounded-2xl md:rounded-[2rem] flex flex-col justify-end relative overflow-hidden group reveal reveal-delay-1">
         <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
           <span class="material-symbols-outlined text-[120px]">verified_user</span>
         </div>
@@ -423,5 +439,109 @@
   </div>
 </footer>
 
+<script>
+// ─── 1. PARTICLE NETWORK ───────────────────────────────────────────────────
+(function(){
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.35;
+      this.vy = (Math.random() - 0.5) * 0.35;
+      this.r = Math.random() * 1.5 + 0.5;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(161,228,255,0.7)';
+      ctx.fill();
+    }
+  }
+
+  function init() {
+    particles = [];
+    const n = Math.min(80, Math.floor(canvas.width * canvas.height / 12000));
+    for (let i = 0; i < n; i++) particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 140) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(161,228,255,${0.18 * (1 - dist/140)})`;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  resize(); init(); animate();
+})();
+
+// ─── 2. TYPING / ROTATING HEADLINE ────────────────────────────────────────
+(function(){
+  const el = document.getElementById('typing-phrase');
+  if (!el) return;
+  const phrases = [
+    'For Your Business',
+    'To Save You Time',
+    'To Beat Your Competition',
+    'Without The Jargon',
+    'For Growing SMEs',
+  ];
+  let pi = 0, ci = 0, deleting = false;
+
+  function tick() {
+    const phrase = phrases[pi];
+    if (!deleting) {
+      el.textContent = phrase.slice(0, ++ci);
+      if (ci === phrase.length) { deleting = true; setTimeout(tick, 2200); return; }
+      setTimeout(tick, 65);
+    } else {
+      el.textContent = phrase.slice(0, --ci);
+      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(tick, 400); return; }
+      setTimeout(tick, 35);
+    }
+  }
+  // Start after a short delay so page load feels smooth
+  setTimeout(tick, 1800);
+})();
+
+// ─── 3. SCROLL REVEAL ─────────────────────────────────────────────────────
+(function(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+})();
+</script>
 </body>
 </html>
