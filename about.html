@@ -97,6 +97,12 @@
         .text-glow {
             text-shadow: 0 0 20px rgba(161, 228, 255, 0.3);
         }
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
     </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -130,14 +136,14 @@
 <!-- Hero Section -->
 <section class="mb-16 md:mb-32">
 <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-end">
-<div class="space-y-8">
+<div class="space-y-8 reveal">
 <span class="label-sm tracking-[0.2em] text-primary uppercase font-semibold">OUR PURPOSE</span>
 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-tight text-white text-glow">
                         Practical AI for <br/>
 <span class="text-primary">Every SME.</span>
 </h1>
 </div>
-<div class="max-w-xl">
+<div class="max-w-xl reveal reveal-delay-1">
 <p class="text-xl text-on-surface-variant leading-relaxed font-light">
                         We strip away the complexity of artificial intelligence, delivering tailored, high-impact solutions that move the needle for growing businesses.
                     </p>
@@ -147,7 +153,7 @@
 <!-- Bento Founder Story Section -->
 <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-32">
 <!-- Founder Profile Card -->
-<div class="md:col-span-5 lg:col-span-4 bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center pt-10 px-6 pb-8 gap-5">
+<div class="md:col-span-5 lg:col-span-4 bg-surface-container-low rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center pt-10 px-6 pb-8 gap-5 reveal">
   <img alt="Graham Tydeman" class="w-72 h-72 md:w-80 md:h-80 object-contain" src="images/graham-tydeman.png"/>
   <div class="text-center">
     <h3 class="text-2xl font-bold text-white">Graham Tydeman</h3>
@@ -174,7 +180,7 @@
 </div>
 <!-- Story Narrative -->
 <div class="md:col-span-7 lg:col-span-8 grid grid-cols-1 gap-6">
-<div class="bg-surface-container p-6 md:p-10 rounded-3xl border border-outline-variant/10">
+<div class="bg-surface-container p-6 md:p-10 rounded-3xl border border-outline-variant/10 reveal reveal-delay-1">
 <div class="flex items-start gap-6">
 <div class="hidden sm:block">
 <span class="material-symbols-outlined text-4xl text-primary">format_quote</span>
@@ -198,17 +204,17 @@
 </div>
 <!-- Mission Quick Stats -->
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center">
+<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center reveal reveal-delay-1">
 <span class="material-symbols-outlined text-primary mb-4">verified</span>
 <h4 class="text-white font-bold text-lg mb-1">Practical</h4>
 <p class="text-sm text-on-surface-variant">Real-world results.</p>
 </div>
-<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center">
+<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center reveal reveal-delay-2">
 <span class="material-symbols-outlined text-primary mb-4">payments</span>
 <h4 class="text-white font-bold text-lg mb-1">Affordable</h4>
 <p class="text-sm text-on-surface-variant">SME-friendly pricing.</p>
 </div>
-<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center">
+<div class="bg-surface-container-low p-5 md:p-8 rounded-3xl border border-outline-variant/10 text-center reveal reveal-delay-3">
 <span class="material-symbols-outlined text-primary mb-4">universal_currency_alt</span>
 <h4 class="text-white font-bold text-lg mb-1">Accessible</h4>
 <p class="text-sm text-on-surface-variant">No PhD required.</p>
@@ -218,7 +224,7 @@
 </section>
 <!-- Values Section -->
 <section class="mb-16 md:mb-32">
-<div class="bg-surface-container-highest/30 p-6 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] relative overflow-hidden">
+<div class="bg-surface-container-highest/30 p-6 md:p-12 lg:p-20 rounded-2xl md:rounded-[3rem] relative overflow-hidden reveal">
 <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
 <div class="max-w-3xl relative z-10">
 <h2 class="text-4xl font-bold text-white mb-8">Our Mission</h2>
@@ -266,4 +272,12 @@
             © 2026 Reece AI Ltd. All Rights Reserved.
         </div>
 </footer>
+<script>
+  (function(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+</script>
 </body></html>
