@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Assessment | Reece AI</title>
+<link rel="canonical" href="https://reeceai.ai/ai-assessment.html"/>
+<meta name="description" content="A structured 2-hour AI Assessment session with Graham Tydeman, followed by a written findings report. Find out exactly where AI would make the biggest difference in your business."/>
+<meta property="og:title" content="AI Assessment | Reece AI"/>
+<meta property="og:description" content="2-hour session. Written findings report. Fixed cost. Find out exactly where AI fits in your business."/>
+<meta property="og:url" content="https://reeceai.ai/ai-assessment.html"/>
+<meta property="og:type" content="website"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container": "#151f34", "surface": "#081327", "on-primary": "#003544",
+          "primary": "#a1e4ff", "background": "#081327", "on-primary-fixed": "#001f28",
+          "surface-container-high": "#1f2a3f", "on-surface": "#d8e2fe", "primary-container": "#00cfff",
+          "surface-container-highest": "#2a354a", "surface-container-low": "#101b2f",
+          "on-secondary-container": "#acbacc", "outline": "#869399", "on-surface-variant": "#bbc9cf",
+          "surface-dim": "#081327", "on-background": "#d8e2fe", "primary-fixed-dim": "#54d5ff",
+          "outline-variant": "#3c494e", "on-primary-container": "#00546a",
+          "surface-container-lowest": "#030e21", "on-tertiary-fixed": "#001a42"
+        },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        fontFamily: { headline: ["Inter"], body: ["Inter"], label: ["Inter"] }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .primary-gradient { background: linear-gradient(135deg, #a1e4ff 0%, #00cfff 100%); }
+  body { background-color: #081327; color: #d8e2fe; font-family: 'Inter', sans-serif; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+  <div class="rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] flex justify-between items-center px-5 md:px-8 py-3">
+    <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+    <div class="hidden md:flex gap-8">
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="about.html">About</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden mt-2 rounded-2xl bg-slate-950/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.1)] p-4">
+    <div class="flex flex-col gap-1">
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors px-4 py-3 rounded-xl font-semibold text-center block" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors px-4 py-3 rounded-xl font-semibold text-center block" href="about.html">About</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors px-4 py-3 rounded-xl font-semibold text-center block" href="contact.html">Contact</a>
+      <a href="contact.html" class="mt-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-semibold text-center block">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-28 md:pt-36 pb-16 md:pb-24 px-4 md:px-8 max-w-7xl mx-auto">
+
+  <!-- Hero -->
+  <section class="mb-16 md:mb-24 reveal">
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8">
+        <span class="material-symbols-outlined text-sm">analytics</span> Fixed Price Service
+      </div>
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.95] mb-6">
+        The 2-Hour<br/><span class="text-primary-container">AI Assessment.</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+        A structured session to map your business, find where AI would make the biggest difference, and tell you exactly what to do — in plain English, with a written report to take away.
+      </p>
+    </div>
+  </section>
+
+  <!-- What happens / What you get — two column -->
+  <section class="mb-16 md:mb-24 grid lg:grid-cols-2 gap-8 reveal">
+
+    <!-- What happens -->
+    <div class="bg-surface-container-high rounded-2xl md:rounded-3xl p-8 md:p-12 border border-outline-variant/20">
+      <h2 class="text-2xl font-black text-white mb-8 tracking-tight">What happens in the session</h2>
+      <div class="space-y-7">
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-black text-sm">1</div>
+          <div>
+            <p class="text-white font-bold mb-1">We map how your business currently runs</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">We go through your day-to-day — where your time goes, what your team does, how work moves through the business. No preparation needed from you.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-black text-sm">2</div>
+          <div>
+            <p class="text-white font-bold mb-1">We identify the highest-value AI opportunities</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Not a list of every AI tool that exists. Specifically the two or three places in your business where AI would save the most time and have the clearest impact.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-primary font-black text-sm">3</div>
+          <div>
+            <p class="text-white font-bold mb-1">We agree on the right order to tackle them</p>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Quick wins first. We sequence the opportunities so you see results fast, and build from there.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What you get -->
+    <div class="space-y-6">
+      <div class="bg-surface-container-high rounded-2xl md:rounded-3xl p-8 md:p-10 border border-primary/20">
+        <h2 class="text-2xl font-black text-white mb-7 tracking-tight">What you walk away with</h2>
+        <ul class="space-y-5">
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1">description</span>
+            <div>
+              <p class="text-white font-bold text-sm">Written findings report</p>
+              <p class="text-on-surface-variant text-sm">A clear, written document covering your AI readiness, the opportunities we identified, and the recommended next steps — in order of priority.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1">lightbulb</span>
+            <div>
+              <p class="text-white font-bold text-sm">Specific, actionable recommendations</p>
+              <p class="text-on-surface-variant text-sm">Not generic AI advice. Specific to your business, your team, and the way you actually work.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-variation-settings:'FILL' 1">check_circle</span>
+            <div>
+              <p class="text-white font-bold text-sm">A clear decision to make</p>
+              <p class="text-on-surface-variant text-sm">At the end you'll know exactly what AI could do for your business — and whether you want to take it further with implementation.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Logistics -->
+      <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/20">
+        <div class="grid grid-cols-2 gap-4 text-sm">
+          <div class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+            <div><p class="text-white font-semibold">2 hours</p><p class="text-xs">Video call</p></div>
+          </div>
+          <div class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-xl">description</span>
+            <div><p class="text-white font-semibold">Written report</p><p class="text-xs">Sent after the session</p></div>
+          </div>
+          <div class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-xl">payments</span>
+            <div><p class="text-white font-semibold">£299–£499</p><p class="text-xs">Fixed, agreed on your free call</p></div>
+          </div>
+          <div class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+            <div><p class="text-white font-semibold">No surprises</p><p class="text-xs">Price confirmed before you pay</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Who it's for -->
+  <section class="mb-16 md:mb-24 reveal">
+    <div class="bg-surface-container-highest/30 rounded-2xl md:rounded-[3rem] p-8 md:p-16 border border-outline-variant/20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div class="max-w-3xl relative z-10">
+        <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-6">Who this is for</h2>
+        <p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+          The AI Assessment is built for business owners who know AI could help them but haven't found the time or the right person to figure out where to start. You don't need to know anything about AI before the session. That's the point of it.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary flex-shrink-0">check</span>
+            <p class="text-on-surface-variant text-sm">You're spending too much time on admin and manual tasks</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary flex-shrink-0">check</span>
+            <p class="text-on-surface-variant text-sm">You've heard about AI but don't know where it fits in your business</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary flex-shrink-0">check</span>
+            <p class="text-on-surface-variant text-sm">You want a clear answer, not a 50-page report full of jargon</p>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary flex-shrink-0">check</span>
+            <p class="text-on-surface-variant text-sm">You want someone who understands business, not just technology</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to book -->
+  <section class="mb-16 md:mb-24 reveal">
+    <h2 class="text-3xl font-black text-white tracking-tight mb-10">How to book</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-surface-container-high rounded-2xl p-7 border border-outline-variant/20">
+        <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black mb-5">1</div>
+        <h3 class="text-white font-bold mb-2">Book a free 15-minute call</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Use the button below to pick a time. Phone call or Google Meet — your choice. No preparation needed.</p>
+      </div>
+      <div class="bg-surface-container-high rounded-2xl p-7 border border-outline-variant/20">
+        <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black mb-5">2</div>
+        <h3 class="text-white font-bold mb-2">Graham confirms scope and price</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">On the call, Graham will ask about your business and confirm the fixed cost — £299 or £499 depending on size.</p>
+      </div>
+      <div class="bg-surface-container-high rounded-2xl p-7 border border-outline-variant/20">
+        <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-black mb-5">3</div>
+        <h3 class="text-white font-bold mb-2">Pay and book your session</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Graham sends a payment link by email. Once paid, you book your 2-hour AI Assessment session at a time that suits you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="bg-gradient-to-br from-surface-container-high to-surface-container rounded-2xl md:rounded-3xl p-10 md:p-16 border border-primary/20 text-center relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+      <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Start with a free call</h2>
+      <p class="text-on-surface-variant text-lg max-w-xl mx-auto mb-8">Book a free 15-minute call. We'll talk through your business, confirm whether the assessment is right for you, and agree the price — no obligation.</p>
+      <a href="https://calendly.com/graham-reeceai/15-30-minute-call" target="_blank" class="inline-flex items-center justify-center gap-3 primary-gradient text-on-primary text-xl font-black px-10 md:px-16 py-5 md:py-6 rounded-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform w-full sm:w-auto">
+        Book My Free Call
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <p class="text-on-surface-variant text-sm mt-5">Free · No obligation · 15 minutes</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-950 w-full pt-20 pb-10 px-8 flex flex-col items-center text-center space-y-4 text-sm tracking-wide">
+  <div class="text-xl font-bold text-white mb-4">Reece AI</div>
+  <div class="flex flex-wrap justify-center gap-6 mb-8 text-slate-500">
+    <a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
+    <a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
+  </div>
+  <div class="text-slate-500 max-w-md opacity-60">Reece AI | Registration No: 17137008. Practical AI for UK small businesses.</div>
+  <div class="pt-8 border-t border-white/5 w-full max-w-7xl flex justify-between items-center text-xs text-slate-700">
+    <p>© 2026 Reece AI. All rights reserved.</p>
+    <div class="flex gap-4"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+</script>
+</body>
+</html>
