@@ -1008,10 +1008,10 @@ function showResults() {
         <div class="p-8 md:p-10">
           <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
           <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
-            <p>Genuinely — congratulations. Your score puts you well ahead of the majority of UK SMEs. The fact that you've already started thinking seriously about AI, and have begun to embed it into how you work, is a real competitive advantage. Most of your competitors haven't.</p>
-            <p>Where businesses at your stage typically get caught out is <span class="text-white font-semibold">what happens next</span>. AI is moving faster than most people realise. The tools that are cutting-edge today will be baseline in 12 months. Staying ahead means staying informed — and knowing which developments are actually relevant to your business.</p>
-            <p>My honest recommendation at your stage is to stay sharp. Subscribe to our daily AI insights email below — it's free, it's curated specifically for business owners who are already implementing AI, and it will keep you ahead of the curve without having to wade through the noise yourself.</p>
-            <p class="text-white font-semibold">You've made a strong start. The next step is making sure you don't stand still.</p>
+            <p>You scored in the top bracket. That puts you ahead of nearly every UK small business owner we've assessed.</p>
+            <p>It also makes the next 12 months more important, not less.</p>
+            <p>The businesses that score where you have are the ones with the most to lose by going quiet. Your competitors are slower today, but they're paying attention. <span class="text-white font-semibold">What's cutting edge for you now will be standard for them by next year.</span></p>
+            <p>If you want a sharper look at where you'd get the biggest next step — not the basics, the next layer — reply to the email this PDF arrived with and we'll find an hour.</p>
           </div>
         </div>
       </div>
@@ -1042,21 +1042,18 @@ function showResults() {
     `;
   } else {
     nextSteps.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-outline-variant/20">
-        <div class="max-w-xl mx-auto text-center">
-          <span class="material-symbols-outlined text-primary text-4xl mb-4 block">trending_up</span>
-          <h2 class="text-2xl font-black text-white mb-4 tracking-tight">Stay Sharp — The AI World Moves Fast</h2>
-          <p class="text-on-surface-variant mb-8 leading-relaxed">
-            You're already ahead. The best thing you can do now is stay informed as AI continues to evolve rapidly. Join our free daily AI insights email — curated specifically for business owners who are already implementing AI.
-          </p>
-          <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3">
-            <input id="newsletter-email" type="email" placeholder="your@email.com" value="${state.email}" class="flex-1 bg-surface-container-low border border-outline-variant/30 rounded-full px-5 py-3 text-white placeholder-outline focus:outline-none focus:border-primary/50 text-sm"/>
-            <button type="button" onclick="subscribeNewsletter()" class="bg-primary-container text-on-primary-container font-bold px-7 py-3 rounded-full hover:scale-105 transition-all text-sm whitespace-nowrap">
-              Subscribe to Daily AI Insights
-            </button>
-          </form>
-          <p id="newsletter-msg" class="hidden text-primary text-sm mt-3 font-medium">You're subscribed! Welcome to daily AI insights.</p>
-        </div>
+      <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-outline-variant/20 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Your Next Step</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-5 tracking-tight">The Next Layer</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed text-lg">
+          Reply to the email this PDF arrived with. Tell us you want to find an hour. We'll take a sharper look at where your biggest next step actually is — not the basics, the next layer.
+        </p>
+        <a href="mailto:graham@reeceai.ai?subject=Next Steps — AI Assessment&body=Hi Graham, I just completed the AI Readiness Assessment and scored in the top bracket. I'd like to find an hour to discuss the next layer." class="inline-flex items-center gap-3 bg-primary-container text-on-primary-container text-lg font-black px-10 py-5 rounded-full cta-glow hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center">
+          <span class="material-symbols-outlined">mail</span>
+          Reply to Graham
+        </a>
+        <p class="text-on-surface-variant text-sm mt-5">Or email directly: <a href="mailto:graham@reeceai.ai" class="text-primary hover:underline">graham@reeceai.ai</a></p>
       </div>
     `;
   }
@@ -1253,8 +1250,18 @@ function downloadPDF() {
     doc.link(btnX, btnY, btnW, btnH, { url: 'https://calendly.com/graham-reeceai/15-30-minute-call' });
     y += 20; // extra space for the button
   } else {
-    doc.text('You are ahead of the curve. Stay sharp as AI evolves.', M + 8, y + 20);
-    doc.text('Subscribe to daily AI insights at reeceai.ai', M + 8, y + 27);
+    const highLines = doc.splitTextToSize('Reply to this email and tell us you want to find an hour. We\'ll take a sharper look at where your biggest next step actually is — not the basics, the next layer.', W - M*2 - 16);
+    doc.text(highLines, M + 8, y + 20, { maxWidth: W - M*2 - 16 });
+    const btnY2 = y + 20 + (highLines.length * 5) + 6;
+    const btnW2 = 70; const btnH2 = 12;
+    const btnX2 = W / 2 - btnW2 / 2;
+    doc.setFillColor(0, 207, 255);
+    doc.roundedRect(btnX2, btnY2, btnW2, btnH2, 3, 3, 'F');
+    doc.setTextColor(0, 53, 68);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.text('EMAIL GRAHAM', W / 2, btnY2 + 8, { align: 'center' });
+    doc.link(btnX2, btnY2, btnW2, btnH2, { url: 'mailto:graham@reeceai.ai?subject=Next Steps — AI Assessment' });
   }
 
   // Footer
