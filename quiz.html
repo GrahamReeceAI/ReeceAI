@@ -642,12 +642,17 @@ const questions = [
     ]
   },
   {
-    category: "Tell Us More",
-    text: "Is there anything else you'd like to share about your business or your situation that would help us give you more personalised recommendations?",
-    type: "textarea",
+    category: "Your Business",
+    text: "How many people work in your business, including yourself?",
+    type: "single",
     scored: false,
     optional: true,
-    options: []
+    options: [
+      { text: "Just me — I run the business solo", score: null },
+      { text: "2–5 people", score: null },
+      { text: "6–15 people", score: null },
+      { text: "16–50 people", score: null }
+    ]
   }
 ];
 
@@ -1098,7 +1103,7 @@ async function submitToFormspree(score, category, insights) {
     q12_desired_outcome: state.answers[11] !== null ? questions[11].options[state.answers[11]].text : 'Not answered',
     q13_blockers: blockers || 'None selected',
     q14_preferred_support: state.answers[13] !== null ? questions[13].options[state.answers[13]].text : 'Not answered',
-    q15_open_text: state.answers[14] || 'Not provided',
+    q15_business_size: state.answers[14] !== null ? questions[14].options[state.answers[14]].text : 'Not provided',
     source: 'quiz-funnel'
   };
 
@@ -1161,42 +1166,51 @@ function downloadPDF() {
   doc.setFontSize(18);
   doc.setFont('helvetica', 'bold');
   doc.text(`${state.firstName} ${state.lastName}`, M, 58);
+  let nameY = 66;
   if (state.business) {
     doc.setFontSize(11);
     doc.setFont('helvetica', 'normal');
     doc.setTextColor(161, 228, 255);
-    doc.text(state.business, M, 66);
+    doc.text(state.business, M, nameY);
+    nameY += 8;
+  }
+  const businessSize = state.answers[14] !== null ? questions[14].options[state.answers[14]].text : null;
+  if (businessSize) {
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(180, 200, 220);
+    doc.text(`Business size: ${businessSize}`, M, nameY);
   }
 
   // Score box
   doc.setFillColor(21, 31, 52);
-  doc.roundedRect(M, 74, W - M*2, 38, 4, 4, 'F');
+  doc.roundedRect(M, 86, W - M*2, 38, 4, 4, 'F');
   doc.setFillColor(0, 207, 255);
-  doc.roundedRect(M, 74, 50, 38, 4, 4, 'F');
+  doc.roundedRect(M, 86, 50, 38, 4, 4, 'F');
 
   doc.setTextColor(8, 19, 39);
   doc.setFontSize(28);
   doc.setFont('helvetica', 'bold');
-  doc.text(`${score}/10`, M + 25, 91, { align: 'center' });
+  doc.text(`${score}/10`, M + 25, 103, { align: 'center' });
   doc.setFontSize(8);
-  doc.text('SCORE', M + 25, 100, { align: 'center' });
+  doc.text('SCORE', M + 25, 112, { align: 'center' });
 
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(12);
   doc.setFont('helvetica', 'bold');
-  doc.text(cat.label, M + 58, 87);
+  doc.text(cat.label, M + 58, 99);
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(180, 200, 220);
-  doc.text('AI Readiness Category', M + 58, 96);
+  doc.text('AI Readiness Category', M + 58, 108);
 
   // Insights
   doc.setTextColor(161, 228, 255);
   doc.setFontSize(12);
   doc.setFont('helvetica', 'bold');
-  doc.text('Your Personalised Insights', M, 126);
+  doc.text('Your Personalised Insights', M, 138);
 
-  let y = 134;
+  let y = 146;
   insights.forEach((insight, i) => {
     doc.setFillColor(21, 31, 52);
     const lines = doc.splitTextToSize(insight, W - M*2 - 20);
