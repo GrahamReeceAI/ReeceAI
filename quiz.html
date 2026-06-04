@@ -1007,9 +1007,7 @@ function showResults() {
       <p>You scored in the top bracket. That puts you ahead of nearly every UK small business owner we've assessed.</p>
       <p>It also makes the next 12 months more important, not less.</p>
       <p>Businesses that score where you have are the ones with the most to lose by going quiet. Your competitors are slower today, but they're paying attention. <span class="text-white font-semibold">What's cutting edge for you this year will be standard for them by next.</span></p>
-      <p>Two options from here.</p>
-      <p>Subscribe to the daily AI insights email below. Free, short, written for owners who are already implementing. No fluff.</p>
-      <p>Or, if you'd rather talk through where the next layer of AI would land hardest in your business — not the basics, the next layer — book a 15-minute call. We'll spend it on advanced wins, not setup.</p>
+      <p>If you want to talk through where the next layer of AI would land hardest in your business — not the basics, the next layer — book a 15-minute call below. We'll spend it on advanced wins, not setup.</p>
     `);
   }
 
@@ -1046,31 +1044,12 @@ function showResults() {
       </div>`;
   } else {
     nextSteps.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-outline-variant/20 text-center relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-6">Two Options</span>
-        <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto text-left">
-          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/20">
-            <p class="text-white font-bold mb-2">Daily AI Insights</p>
-            <p class="text-on-surface-variant text-sm mb-5">Free. Short. Written for owners already implementing. No fluff.</p>
-            <div class="flex flex-col gap-2">
-              <input id="newsletter-email" type="email" placeholder="your@email.com" value="${state.email}" class="bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-3 text-white placeholder-outline focus:outline-none focus:border-primary/50 text-sm w-full"/>
-              <button type="button" onclick="subscribeNewsletter()" class="bg-primary/20 border border-primary/40 text-primary font-bold px-5 py-3 rounded-xl hover:bg-primary/30 transition-all text-sm w-full">
-                Subscribe
-              </button>
-            </div>
-            <p id="newsletter-msg" class="hidden text-primary text-xs mt-2 font-medium">You're subscribed.</p>
-          </div>
-          <div class="bg-surface-container-low rounded-2xl p-6 border border-primary/20">
-            <p class="text-white font-bold mb-2">Book a Call</p>
-            <p class="text-on-surface-variant text-sm mb-5">Advanced wins, not setup. We'll spend the time on the next layer, not the basics.</p>
-            <a href="https://calendly.com/graham-reeceai/15-30-minute-call" target="_blank" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-bold px-5 py-3 rounded-xl hover:scale-105 transition-all text-sm w-full cta-glow">
-              <span class="material-symbols-outlined text-base">calendar_month</span>
-              Book Free 15-Minute Call
-            </a>
-          </div>
-        </div>
-        <p class="text-on-surface-variant text-xs mt-6">reeceai.ai</p>
+      <div class="bg-gradient-to-br from-surface-container via-surface-container to-primary/5 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Next Step</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">Book a Free 15-Minute Call</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed">Advanced wins, not setup. We'll spend the time on the next layer, not the basics.</p>
+        ${bookBtn}
       </div>`;
   }
 
@@ -1271,7 +1250,7 @@ function downloadPDF() {
     doc.text(lines, M + 8, y + 20);
     addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
   } else {
-    const txt = "Two options. Subscribe to the daily AI insights email at reeceai.ai — free, short, no fluff. Or book a 15-minute call below — advanced wins, not setup.";
+    const txt = "Book a 15-minute call below. Advanced wins, not setup. We'll spend the time on the next layer, not the basics.";
     const lines = doc.splitTextToSize(txt, W - M*2 - 16);
     doc.text(lines, M + 8, y + 20);
     addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
