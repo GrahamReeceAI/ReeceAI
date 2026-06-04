@@ -531,27 +531,27 @@ const questions = [
     ]
   },
   {
-    category: "Business Visibility",
-    text: "How well do you know where time is being wasted in your business right now?",
+    category: "Data & Systems",
+    text: "How well organised is your business data — customer information, documents, processes and financials?",
     type: "single",
     scored: true,
     options: [
-      { text: "I have a rough idea but no real data", score: 0 },
-      { text: "I know some of the pain points but haven't mapped them", score: 1 },
-      { text: "I've identified the main issues but haven't solved them yet", score: 2 },
-      { text: "We track time and have clear visibility of where efficiency is lost", score: 3 }
+      { text: "It's scattered everywhere — emails, spreadsheets, paper, different people's heads", score: 0 },
+      { text: "Some of it is digital but it's inconsistent and hard to find", score: 1 },
+      { text: "Most data is in digital tools but not always connected or up to date", score: 2 },
+      { text: "We have clean, consistent, accessible data across the business", score: 3 }
     ]
   },
   {
-    category: "Competitive Response",
-    text: "When you hear about a competitor using AI to get ahead, what's your response?",
+    category: "Technology Stack",
+    text: "How would you describe the technology tools your business currently uses?",
     type: "single",
     scored: true,
     options: [
-      { text: "I'm not sure what they're doing or how to respond", score: 0 },
-      { text: "I feel worried but don't know where to start", score: 1 },
-      { text: "I've been meaning to look into it but haven't acted yet", score: 2 },
-      { text: "I'm already moving — I just want to do it smarter and faster", score: 3 }
+      { text: "Mostly email and spreadsheets — we don't use much dedicated software", score: 0 },
+      { text: "We use a few basic tools but nothing that's integrated or systematic", score: 1 },
+      { text: "We use several tools — CRM, project management, accounting — but they don't fully connect", score: 2 },
+      { text: "We have a solid, well-connected tech stack that works smoothly for our team", score: 3 }
     ]
   },
   {
@@ -873,8 +873,8 @@ function generateInsights(answers) {
     2: s => s <= 0 ? "Every out-of-hours enquiry that waits until morning is a potential client lost to a competitor. An AI-powered response system could handle initial enquiries instantly — 24/7, without you lifting a finger." : s <= 1 ? "Your out-of-hours enquiry handling is leaving opportunities on the table. An intelligent first-response system could change this within days." : null,
     3: s => s <= 0 ? "Your team isn't using AI tools yet — which means you're at the very beginning of a journey that could transform how your business operates. The good news: the gains available to you are enormous." : s <= 1 ? "With only occasional AI tool use, you're getting a fraction of the available benefit. Building consistent AI workflows across your team is a high-leverage next step." : null,
     4: s => s <= 0 ? "Writing proposals and communications from scratch every time is one of the biggest time drains we see in growing businesses. AI-powered templates and generation tools can cut this effort by 70%+" : null,
-    5: s => s <= 0 ? "Without visibility of where time is being lost, it's very difficult to fix it. An AI-powered time and workflow audit is a natural first step for you." : null,
-    6: s => s <= 1 ? "You're aware competitors are moving with AI but haven't acted yet — this is actually the ideal moment to move. Early movers in your market will have a significant advantage." : null,
+    5: s => s <= 0 ? "Your data is scattered across emails, spreadsheets, and people's heads — and this is one of the biggest barriers to AI working effectively. Getting your data organised is the single highest-leverage step you can take before deploying any AI tool." : s <= 1 ? "Your data organisation needs strengthening before AI can deliver its full potential. Consolidating your customer data, processes and documents into consistent digital systems will unlock significantly better results." : null,
+    6: s => s <= 0 ? "With mostly email and spreadsheets, you're starting from a clean slate — which can actually be an advantage. Modern AI tools are designed to integrate with simple setups, and we can build the right stack from the ground up for your business." : s <= 1 ? "Your current tools aren't fully connected, which limits what AI can do right now. Connecting your existing tools with AI integrations is often simpler than it sounds — and delivers immediate efficiency gains." : null,
     7: s => s <= 0 ? "Content creation is barely happening for you right now — understandably, given the time it takes. AI content tools could give you a consistent, high-quality content presence without the time investment." : null,
     8: s => s <= 0 ? "Team resistance to change can be the biggest barrier to AI adoption. The key is starting with tools that make people's lives easier immediately — creating advocates, not resisters." : null,
     9: s => s <= 0 ? "Leads falling through the cracks is one of the most common (and costly) problems we see. An automated follow-up sequence could recover a meaningful percentage of your lost revenue." : null,
@@ -1089,8 +1089,8 @@ async function submitToFormspree(score, category, insights) {
     q3_out_of_hours: state.answers[2] !== null ? questions[2].options[state.answers[2]].text : 'Not answered',
     q4_ai_tools: state.answers[3] !== null ? questions[3].options[state.answers[3]].text : 'Not answered',
     q5_communications: state.answers[4] !== null ? questions[4].options[state.answers[4]].text : 'Not answered',
-    q6_visibility: state.answers[5] !== null ? questions[5].options[state.answers[5]].text : 'Not answered',
-    q7_competitive: state.answers[6] !== null ? questions[6].options[state.answers[6]].text : 'Not answered',
+    q6_data_organisation: state.answers[5] !== null ? questions[5].options[state.answers[5]].text : 'Not answered',
+    q7_tech_stack: state.answers[6] !== null ? questions[6].options[state.answers[6]].text : 'Not answered',
     q8_content: state.answers[7] !== null ? questions[7].options[state.answers[7]].text : 'Not answered',
     q9_team_attitude: state.answers[8] !== null ? questions[8].options[state.answers[8]].text : 'Not answered',
     q10_followup: state.answers[9] !== null ? questions[9].options[state.answers[9]].text : 'Not answered',
