@@ -971,91 +971,107 @@ function showResults() {
     insightsContainer.appendChild(div);
   });
 
-  // Video section
+  // Message section
   const videoSection = document.getElementById('video-section');
-  if (score <= 6) {
-    videoSection.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl border border-primary/20 overflow-hidden">
-        <div class="bg-gradient-to-r from-primary/10 to-transparent px-8 py-5 border-b border-primary/10 flex items-center gap-3">
-          <img src="images/graham-tydeman.png" alt="Graham Tydeman" class="w-10 h-10 object-contain" />
-          <div>
-            <p class="text-white font-bold text-sm">Graham Tydeman</p>
-            <p class="text-primary text-xs">Founder &amp; Director, Reece AI</p>
-          </div>
-        </div>
-        <div class="p-8 md:p-10">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
-          <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
-            <p>First of all — well done for taking the time to do this. Most business owners know AI could help them but never stop to actually find out where. You just did, and that matters.</p>
-            <p>Based on your score, there is a <span class="text-white font-semibold">real, significant opportunity</span> in your business right now. The good news is that you don't need to have everything figured out. You just need to know where to start — and that's exactly what I help with.</p>
-            <p>I spent over 20 years working at the heart of global financial markets, where the biggest institutions had one clear advantage over everyone else: the best tools. AI is that advantage now. And the businesses that move first are the ones that pull ahead.</p>
-            <p class="text-white font-semibold">You are exactly the type of business Reece AI was built for.</p>
-            <p>The single best next step I can suggest is a free 15-minute call. No pitch, no pressure — just a straightforward conversation about your results and where AI could make the biggest difference for you. Book it below. I look forward to speaking with you.</p>
-          </div>
+  const msgCard = (borderClass, content) => `
+    <div class="bg-surface-container rounded-2xl md:rounded-3xl border ${borderClass} overflow-hidden">
+      <div class="bg-gradient-to-r from-primary/10 to-transparent px-8 py-5 border-b border-primary/10 flex items-center gap-3">
+        <img src="images/graham-tydeman.png" alt="Graham Tydeman" class="w-10 h-10 object-contain" />
+        <div>
+          <p class="text-white font-bold text-sm">Graham Tydeman</p>
+          <p class="text-primary text-xs">Founder &amp; Director, Reece AI</p>
         </div>
       </div>
-    `;
+      <div class="p-8 md:p-10">
+        <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
+        <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">${content}</div>
+      </div>
+    </div>`;
+
+  if (score <= 3) {
+    videoSection.innerHTML = msgCard('border-primary/20', `
+      <p>You're at the start of this. Most UK small businesses are.</p>
+      <p>The ones that get AI working well don't throw money at the newest tool. They figure out where they're leaking time and fix one or two places first.</p>
+      <p>The PDF attached to this score walks through the three areas where AI usually pays off fastest for businesses like yours. Have a read.</p>
+      <p>If you want to talk one of them through, book a 15-minute call below. No homework before the call. Show up, and we'll work out which one would save you the most time this year.</p>
+    `);
+  } else if (score <= 6) {
+    videoSection.innerHTML = msgCard('border-primary/20', `
+      <p>You've started. That puts you ahead of most.</p>
+      <p>The score tells me you've got some AI into the business but there are gaps. Probably more than you realise. Most owners at this stage fix the obvious tasks first and leave the harder ones alone.</p>
+      <p>The PDF you've just received covers where those harder gaps usually sit and how to close them.</p>
+      <p>If you want a quick chat about which one would save you the most time, book a 15-minute call below. We'll go through your results and pick the one worth fixing first.</p>
+    `);
   } else {
-    videoSection.innerHTML = `
-      <div class="bg-surface-container rounded-2xl md:rounded-3xl border border-outline-variant/20 overflow-hidden">
-        <div class="bg-gradient-to-r from-primary/10 to-transparent px-8 py-5 border-b border-outline-variant/10 flex items-center gap-3">
-          <img src="images/graham-tydeman.png" alt="Graham Tydeman" class="w-10 h-10 object-contain" />
-          <div>
-            <p class="text-white font-bold text-sm">Graham Tydeman</p>
-            <p class="text-primary text-xs">Founder &amp; Director, Reece AI</p>
-          </div>
-        </div>
-        <div class="p-8 md:p-10">
-          <span class="material-symbols-outlined text-primary text-3xl mb-4 block" style="font-variation-settings:'FILL' 1">format_quote</span>
-          <div class="space-y-4 text-on-surface-variant leading-relaxed text-lg">
-            <p>You scored in the top bracket. That puts you ahead of nearly every UK small business owner we've assessed.</p>
-            <p>It also makes the next 12 months more important, not less.</p>
-            <p>The businesses that score where you have are the ones with the most to lose by going quiet. Your competitors are slower today, but they're paying attention. <span class="text-white font-semibold">What's cutting edge for you now will be standard for them by next year.</span></p>
-            <p>If you want a sharper look at where you'd get the biggest next step — not the basics, the next layer — reply to the email this PDF arrived with and we'll find an hour.</p>
-          </div>
-        </div>
-      </div>
-    `;
+    videoSection.innerHTML = msgCard('border-outline-variant/20', `
+      <p>You scored in the top bracket. That puts you ahead of nearly every UK small business owner we've assessed.</p>
+      <p>It also makes the next 12 months more important, not less.</p>
+      <p>Businesses that score where you have are the ones with the most to lose by going quiet. Your competitors are slower today, but they're paying attention. <span class="text-white font-semibold">What's cutting edge for you this year will be standard for them by next.</span></p>
+      <p>Two options from here.</p>
+      <p>Subscribe to the daily AI insights email below. Free, short, written for owners who are already implementing. No fluff.</p>
+      <p>Or, if you'd rather talk through where the next layer of AI would land hardest in your business — not the basics, the next layer — book a 15-minute call. We'll spend it on advanced wins, not setup.</p>
+    `);
   }
 
   // Next steps
   const nextSteps = document.getElementById('next-steps-section');
-  if (score <= 6) {
+  const bookBtn = `
+    <a href="https://calendly.com/graham-reeceai/15-30-minute-call" target="_blank" class="inline-flex items-center gap-3 bg-primary-container text-on-primary-container text-lg md:text-xl font-black px-8 md:px-12 py-5 md:py-6 rounded-full cta-glow pulse-ring hover:scale-105 active:scale-95 transition-all mb-5 w-full sm:w-auto justify-center">
+      <span class="material-symbols-outlined">calendar_month</span>
+      Book Free 15-Minute Call
+    </a>
+    <div class="flex flex-wrap justify-center gap-5 text-sm text-on-surface-variant">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>Free</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>15 minutes</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>No obligation</span>
+    </div>`;
+
+  if (score <= 3) {
     nextSteps.innerHTML = `
       <div class="bg-gradient-to-br from-surface-container via-surface-container to-primary/5 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20 text-center relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
-        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Recommended Next Step</span>
-        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">Let's Talk About Your Results</h2>
-        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed">
-          Book a free 15-minute call with Graham. No obligation — just a straightforward conversation about where AI could make the biggest difference in your business.
-        </p>
-        <a href="https://calendly.com/graham-reeceai/15-30-minute-call" target="_blank" class="inline-flex items-center gap-3 bg-primary-container text-on-primary-container text-lg md:text-xl font-black px-8 md:px-12 py-5 md:py-6 rounded-full cta-glow pulse-ring hover:scale-105 active:scale-95 transition-all mb-5 w-full sm:w-auto justify-center">
-          <span class="material-symbols-outlined">calendar_month</span>
-          Book Free 15 Minute Call
-        </a>
-        <div class="flex flex-wrap justify-center gap-5 text-sm text-on-surface-variant">
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>Free</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>15 minutes</span>
-          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-primary" style="font-size:16px">check_circle</span>No obligation</span>
-        </div>
-      </div>
-    `;
+        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Next Step</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">Book a Free 15-Minute Call</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed">No homework before the call. Show up, and we'll work out which one would save you the most time this year.</p>
+        ${bookBtn}
+      </div>`;
+  } else if (score <= 6) {
+    nextSteps.innerHTML = `
+      <div class="bg-gradient-to-br from-surface-container via-surface-container to-primary/5 rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Next Step</span>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">Book a Free 15-Minute Call</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed">We'll go through your results and pick the gap worth fixing first.</p>
+        ${bookBtn}
+      </div>`;
   } else {
     nextSteps.innerHTML = `
       <div class="bg-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-outline-variant/20 text-center relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-4">Your Next Step</span>
-        <h2 class="text-2xl md:text-3xl font-black text-white mb-5 tracking-tight">The Next Layer</h2>
-        <p class="text-on-surface-variant max-w-xl mx-auto mb-8 leading-relaxed text-lg">
-          Reply to the email this PDF arrived with. Tell us you want to find an hour. We'll take a sharper look at where your biggest next step actually is — not the basics, the next layer.
-        </p>
-        <a href="mailto:graham@reeceai.ai?subject=Next Steps — AI Assessment&body=Hi Graham, I just completed the AI Readiness Assessment and scored in the top bracket. I'd like to find an hour to discuss the next layer." class="inline-flex items-center gap-3 bg-primary-container text-on-primary-container text-lg font-black px-10 py-5 rounded-full cta-glow hover:scale-105 active:scale-95 transition-all w-full sm:w-auto justify-center">
-          <span class="material-symbols-outlined">mail</span>
-          Reply to Graham
-        </a>
-        <p class="text-on-surface-variant text-sm mt-5">Or email directly: <a href="mailto:graham@reeceai.ai" class="text-primary hover:underline">graham@reeceai.ai</a></p>
-      </div>
-    `;
+        <span class="inline-block text-xs tracking-widest uppercase text-primary font-semibold mb-6">Two Options</span>
+        <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto text-left">
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/20">
+            <p class="text-white font-bold mb-2">Daily AI Insights</p>
+            <p class="text-on-surface-variant text-sm mb-5">Free. Short. Written for owners already implementing. No fluff.</p>
+            <div class="flex flex-col gap-2">
+              <input id="newsletter-email" type="email" placeholder="your@email.com" value="${state.email}" class="bg-surface-container border border-outline-variant/30 rounded-xl px-4 py-3 text-white placeholder-outline focus:outline-none focus:border-primary/50 text-sm w-full"/>
+              <button type="button" onclick="subscribeNewsletter()" class="bg-primary/20 border border-primary/40 text-primary font-bold px-5 py-3 rounded-xl hover:bg-primary/30 transition-all text-sm w-full">
+                Subscribe
+              </button>
+            </div>
+            <p id="newsletter-msg" class="hidden text-primary text-xs mt-2 font-medium">You're subscribed.</p>
+          </div>
+          <div class="bg-surface-container-low rounded-2xl p-6 border border-primary/20">
+            <p class="text-white font-bold mb-2">Book a Call</p>
+            <p class="text-on-surface-variant text-sm mb-5">Advanced wins, not setup. We'll spend the time on the next layer, not the basics.</p>
+            <a href="https://calendly.com/graham-reeceai/15-30-minute-call" target="_blank" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-bold px-5 py-3 rounded-xl hover:scale-105 transition-all text-sm w-full cta-glow">
+              <span class="material-symbols-outlined text-base">calendar_month</span>
+              Book Free 15-Minute Call
+            </a>
+          </div>
+        </div>
+        <p class="text-on-surface-variant text-xs mt-6">reeceai.ai</p>
+      </div>`;
   }
 
   // Auto-submit to Formspree
@@ -1233,35 +1249,32 @@ function downloadPDF() {
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
-  if (score <= 6) {
-    doc.text('Book a free 15-minute call with Graham — no obligation, just a conversation about where AI could help you.', M + 8, y + 20, { maxWidth: W - M*2 - 16 });
-
-    // Clickable button
-    const btnY = y + 32;
-    const btnW = 90;
-    const btnH = 12;
-    const btnX = W / 2 - btnW / 2;
+  const addCalendlyBtn = (yPos) => {
+    const bW = 90, bH = 12, bX = W / 2 - 45;
     doc.setFillColor(0, 207, 255);
-    doc.roundedRect(btnX, btnY, btnW, btnH, 3, 3, 'F');
+    doc.roundedRect(bX, yPos, bW, bH, 3, 3, 'F');
     doc.setTextColor(0, 53, 68);
     doc.setFontSize(10);
     doc.setFont('helvetica', 'bold');
-    doc.text('BOOK FREE 15 MINUTE CALL', W / 2, btnY + 8, { align: 'center' });
-    doc.link(btnX, btnY, btnW, btnH, { url: 'https://calendly.com/graham-reeceai/15-30-minute-call' });
-    y += 20; // extra space for the button
+    doc.text('BOOK FREE 15-MINUTE CALL', W / 2, yPos + 8, { align: 'center' });
+    doc.link(bX, yPos, bW, bH, { url: 'https://calendly.com/graham-reeceai/15-30-minute-call' });
+  };
+
+  if (score <= 3) {
+    const txt = "No homework before the call. Show up, and we'll work out which one would save you the most time this year.";
+    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
+    doc.text(lines, M + 8, y + 20);
+    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
+  } else if (score <= 6) {
+    const txt = "We'll go through your results and pick the gap worth fixing first. No obligation — 15 minutes.";
+    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
+    doc.text(lines, M + 8, y + 20);
+    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
   } else {
-    const highLines = doc.splitTextToSize('Reply to this email and tell us you want to find an hour. We\'ll take a sharper look at where your biggest next step actually is — not the basics, the next layer.', W - M*2 - 16);
-    doc.text(highLines, M + 8, y + 20, { maxWidth: W - M*2 - 16 });
-    const btnY2 = y + 20 + (highLines.length * 5) + 6;
-    const btnW2 = 70; const btnH2 = 12;
-    const btnX2 = W / 2 - btnW2 / 2;
-    doc.setFillColor(0, 207, 255);
-    doc.roundedRect(btnX2, btnY2, btnW2, btnH2, 3, 3, 'F');
-    doc.setTextColor(0, 53, 68);
-    doc.setFontSize(9);
-    doc.setFont('helvetica', 'bold');
-    doc.text('EMAIL GRAHAM', W / 2, btnY2 + 8, { align: 'center' });
-    doc.link(btnX2, btnY2, btnW2, btnH2, { url: 'mailto:graham@reeceai.ai?subject=Next Steps — AI Assessment' });
+    const txt = "Two options. Subscribe to the daily AI insights email at reeceai.ai — free, short, no fluff. Or book a 15-minute call below — advanced wins, not setup.";
+    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
+    doc.text(lines, M + 8, y + 20);
+    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
   }
 
   // Footer
