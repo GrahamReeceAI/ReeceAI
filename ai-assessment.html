@@ -52,6 +52,62 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do I need to prepare for the AI Assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nothing. Just show up. The session is built so you don't need any preparation. We go through how your business currently runs and identify the AI opportunities together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the AI Assessment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two hours over a single video call. The written findings report is sent within a few days after the session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's included in the written findings report?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your AI readiness level, the two or three highest-value AI opportunities for your business, and a clear prioritised action plan. No jargon. Just what to do, in what order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my team join the session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if it helps. Most clients prefer to do it one-to-one with the business owner, but if a senior team member would add value, bring them in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after the AI Assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Implementation is completely optional. You leave with a clear plan and you decide whether to take it further with us, do it in-house, or simply use the insights to inform your own next steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the price vary between £299 and £999?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The price is based on the size of your team. Larger businesses have more processes to map and more complex opportunities. The price is fixed and confirmed on your free call before you pay. No surprises."
+      }
+    }
+  ]
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -84,6 +140,16 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* FAQ accordion */
+  .faq-item { border: 1px solid rgba(60,73,78,0.3); border-radius: 1rem; overflow: hidden; transition: border-color 0.3s ease; background: #151f34; }
+  .faq-item[open] { border-color: rgba(161,228,255,0.4); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 1.25rem 1.5rem; font-weight: 600; color: #ffffff; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s ease; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { background: rgba(161,228,255,0.04); }
+  .faq-item summary .faq-icon { color: #a1e4ff; font-size: 1.5rem; transition: transform 0.3s ease; flex-shrink: 0; }
+  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+  .faq-item .faq-answer { padding: 0 1.5rem 1.5rem; color: #bbc9cf; line-height: 1.65; }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -268,6 +334,37 @@
         <h3 class="text-white font-bold mb-2">Pay and book your session</h3>
         <p class="text-on-surface-variant text-sm leading-relaxed">Graham sends a payment link by email. Once paid, you book your 2-hour AI Assessment session at a time that suits you.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mb-16 md:mb-24 reveal">
+    <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-10">Common Questions</h2>
+    <div class="space-y-4">
+      <details class="faq-item">
+        <summary>What do I need to prepare for the AI Assessment?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Nothing. Just show up. The session is built so you don't need any preparation. We go through how your business currently runs and identify the AI opportunities together.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How long does the AI Assessment take?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Two hours over a single video call. The written findings report is sent within a few days after the session.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What's included in the written findings report?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Your AI readiness level, the two or three highest-value AI opportunities for your business, and a clear prioritised action plan. No jargon. Just what to do, in what order.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can my team join the session?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Yes, if it helps. Most clients prefer to do it one-to-one with the business owner, but if a senior team member would add value, bring them in.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What happens after the AI Assessment?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Implementation is completely optional. You leave with a clear plan and you decide whether to take it further with us, do it in-house, or simply use the insights to inform your own next steps.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Why does the price vary between &#163;299 and &#163;999?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">The price is based on the size of your team. Larger businesses have more processes to map and more complex opportunities. The price is fixed and confirmed on your free call before you pay. No surprises.</div>
+      </details>
     </div>
   </section>
 

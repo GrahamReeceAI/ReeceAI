@@ -84,6 +84,62 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to know anything about AI to work with you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Most of our clients have tried ChatGPT once and stopped. That's the point of us. We work out where AI will help your business, build it, and show your team how to use it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size of business do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UK small and medium businesses, typically 1 to 50 employees. Owner-operators, trades, contractors, service businesses, professional services. Anyone running a business they're personally invested in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most clients see real time savings within 4 to 6 weeks of implementation. The first wins are usually in admin, quoting, customer responses, or content. We sequence the work so you see results fast and build from there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will AI replace my team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. AI is best at the repetitive tasks that drain your team's time. The point is to free them up for higher-value work, not to remove them. Most of our clients use AI to grow without hiring, not to cut people."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my business data safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We use enterprise-grade tools with proper data handling, and we never share your business data with anyone. Data privacy is built into how we design every solution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I've tried AI tools before and they didn't stick?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's the most common starting point we see. The reason tools don't stick isn't usually the tool. It's that they were set up wrong, in the wrong place, or never properly built into how your team works. That's what we fix."
+      }
+    }
+  ]
+}
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -135,6 +191,16 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* FAQ accordion */
+  .faq-item { border: 1px solid rgba(60,73,78,0.3); border-radius: 1rem; overflow: hidden; transition: border-color 0.3s ease; }
+  .faq-item[open] { border-color: rgba(161,228,255,0.4); }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 1.25rem 1.5rem; font-weight: 600; color: #ffffff; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s ease; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary:hover { background: rgba(161,228,255,0.04); }
+  .faq-item summary .faq-icon { color: #a1e4ff; font-size: 1.5rem; transition: transform 0.3s ease; flex-shrink: 0; }
+  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+  .faq-item .faq-answer { padding: 0 1.5rem 1.5rem; color: #bbc9cf; line-height: 1.65; }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -434,6 +500,48 @@
           <p class="text-lg opacity-90 leading-relaxed">We don't hand over a report and disappear. Once it's built, we make sure it works, your team uses it, and it keeps delivering as AI moves on.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ FAQ -->
+<section class="py-16 md:py-24 px-4 md:px-8 bg-surface-container-low">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-12 text-center reveal">
+      <span class="text-primary tracking-[0.2em] uppercase text-sm mb-4 block">FAQ</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Common Questions</h2>
+    </div>
+    <div class="space-y-4 reveal">
+      <details class="faq-item bg-surface-container">
+        <summary>Do I need to know anything about AI to work with you?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">No. Most of our clients have tried ChatGPT once and stopped. That's the point of us. We work out where AI will help your business, build it, and show your team how to use it.</div>
+      </details>
+      <details class="faq-item bg-surface-container">
+        <summary>What size of business do you work with?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">UK small and medium businesses, typically 1 to 50 employees. Owner-operators, trades, contractors, service businesses, professional services. Anyone running a business they're personally invested in.</div>
+      </details>
+      <details class="faq-item bg-surface-container">
+        <summary>How long does it take to see results?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Most clients see real time savings within 4 to 6 weeks of implementation. The first wins are usually in admin, quoting, customer responses, or content. We sequence the work so you see results fast and build from there.</div>
+      </details>
+      <details class="faq-item bg-surface-container">
+        <summary>Will AI replace my team?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">No. AI is best at the repetitive tasks that drain your team's time. The point is to free them up for higher-value work, not to remove them. Most of our clients use AI to grow without hiring, not to cut people.</div>
+      </details>
+      <details class="faq-item bg-surface-container">
+        <summary>Is my business data safe?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">Yes. We use enterprise-grade tools with proper data handling, and we never share your business data with anyone. Data privacy is built into how we design every solution.</div>
+      </details>
+      <details class="faq-item bg-surface-container">
+        <summary>What if I've tried AI tools before and they didn't stick?<span class="material-symbols-outlined faq-icon">add</span></summary>
+        <div class="faq-answer">That's the most common starting point we see. The reason tools don't stick isn't usually the tool. It's that they were set up wrong, in the wrong place, or never properly built into how your team works. That's what we fix.</div>
+      </details>
+    </div>
+    <div class="text-center mt-12 reveal">
+      <p class="text-on-surface-variant mb-6">Got another question? Just ask.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+        Get in Touch <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
     </div>
   </div>
 </section>
