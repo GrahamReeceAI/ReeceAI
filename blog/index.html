@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg"/>
+<link rel="apple-touch-icon" href="/images/favicon.svg"/>
+<title>Blog | Reece AI</title>
+<link rel="canonical" href="https://reeceai.ai/blog/"/>
+<meta name="description" content="Practical articles on AI for UK small businesses. No jargon. No theory. Just useful guidance from Graham Tydeman, Founder of Reece AI."/>
+<meta name="keywords" content="AI blog UK, AI for small business articles, AI assessment guide, AI integration tips, small business AI advice"/>
+<meta name="author" content="Graham Tydeman"/>
+<meta property="og:title" content="Blog | Reece AI"/>
+<meta property="og:description" content="Practical articles on AI for UK small businesses. No jargon. No theory. Just useful guidance."/>
+<meta property="og:url" content="https://reeceai.ai/blog/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_GB"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Reece AI Blog",
+  "url": "https://reeceai.ai/blog/",
+  "description": "Practical articles on AI for UK small businesses. No jargon. No theory. Just useful guidance from Graham Tydeman, Founder of Reece AI.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Reece AI",
+    "url": "https://reeceai.ai",
+    "logo": "https://reeceai.ai/images/favicon.svg"
+  }
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container": "#151f34", "surface": "#081327", "on-primary": "#003544",
+          "primary": "#a1e4ff", "background": "#081327", "primary-container": "#00cfff",
+          "surface-container-high": "#1f2a3f", "on-surface": "#d8e2fe",
+          "surface-container-low": "#101b2f", "outline": "#869399",
+          "on-surface-variant": "#bbc9cf", "on-background": "#d8e2fe",
+          "outline-variant": "#3c494e", "on-primary-container": "#00546a",
+          "primary-fixed-dim": "#54d5ff"
+        },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        fontFamily: { headline: ["Inter"], body: ["Inter"], label: ["Inter"] }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #081327; color: #d8e2fe; font-family: 'Inter', sans-serif; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+  <div class="rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] flex justify-between items-center px-5 md:px-8 py-3">
+    <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+    <div class="hidden md:flex gap-8">
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/about.html">About</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/ai-assessment.html">AI Assessment</a>
+      <a class="text-cyan-300 font-semibold transition-colors duration-300" href="/blog/">Blog</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="/contact.html" class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden mt-2 rounded-2xl bg-slate-950/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.1)] p-4">
+    <div class="flex flex-col gap-1">
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/about.html">About</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/ai-assessment.html">AI Assessment</a>
+      <a class="text-cyan-300 bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/blog/">Blog</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/contact.html">Contact</a>
+      <a href="/contact.html" class="mt-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-semibold text-center block">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-28 md:pt-36 pb-16 md:pb-24 px-4 md:px-8 max-w-5xl mx-auto">
+
+  <!-- Hero -->
+  <section class="mb-12 md:mb-16 reveal">
+    <span class="text-primary tracking-[0.2em] uppercase text-sm mb-4 block">Insights</span>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95] mb-6">
+      The Blog.
+    </h1>
+    <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+      Practical articles on AI for UK small businesses. No jargon. No theory. Just useful guidance from Graham Tydeman.
+    </p>
+  </section>
+
+  <!-- Posts list -->
+  <section class="space-y-6">
+
+    <article class="reveal">
+      <a href="/blog/what-is-an-ai-assessment.html" class="block bg-surface-container-low border border-outline-variant/20 hover:border-primary/40 rounded-2xl md:rounded-3xl p-8 md:p-10 transition-all hover:shadow-[0_0_30px_rgba(161,228,255,0.08)] group">
+        <div class="flex items-center gap-4 mb-5 text-xs text-on-surface-variant">
+          <span class="bg-primary/10 border border-primary/20 text-primary font-bold uppercase tracking-widest px-3 py-1 rounded-full">AI Assessments</span>
+          <span>4 min read</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight group-hover:text-primary transition-colors">What is an AI assessment, and is it worth paying for one?</h2>
+        <p class="text-on-surface-variant leading-relaxed mb-6">Most small business owners know AI could help them but have no idea where to start. A paid AI assessment is supposed to solve that problem. Here's what one actually involves, what to look for, and whether it's worth the money.</p>
+        <span class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
+          Read the article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </span>
+      </a>
+    </article>
+
+    <!-- More posts will go here -->
+
+  </section>
+
+  <!-- CTA -->
+  <section class="mt-16 md:mt-24 reveal">
+    <div class="bg-gradient-to-br from-surface-container-high to-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20 text-center">
+      <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight mb-4">Want this in your inbox?</h2>
+      <p class="text-on-surface-variant max-w-xl mx-auto mb-8">Take the free AI Readiness Assessment to get on the list. You'll get your score, written insights, and any new posts as they're published.</p>
+      <a href="/quiz.html" class="inline-flex items-center justify-center gap-3 bg-primary-container text-on-primary-container text-lg font-black px-10 py-5 rounded-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+        Take the Free Assessment
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-950 w-full pt-20 pb-10 px-8 flex flex-col items-center text-center space-y-4 text-sm tracking-wide">
+  <div class="text-xl font-bold text-white mb-4">Reece AI</div>
+  <div class="flex flex-wrap justify-center gap-6 mb-8 text-slate-500">
+    <a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
+    <a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
+  </div>
+  <div class="text-slate-500 max-w-md opacity-60">Reece AI | Registration No: 17137008. Practical AI for UK small businesses.</div>
+  <div class="pt-8 border-t border-white/5 w-full max-w-7xl flex justify-between items-center text-xs text-slate-700">
+    <p>&copy; 2026 Reece AI. All rights reserved.</p>
+    <div class="flex gap-4"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+</script>
+</body>
+</html>
