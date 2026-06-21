@@ -55,7 +55,30 @@
       { "@type": "Offer", "name": "Small business (6-14 employees)", "price": "499", "priceCurrency": "GBP" },
       { "@type": "Offer", "name": "Growing SME (15+ employees)", "price": "999", "priceCurrency": "GBP" }
     ]
-  }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Aaron Henery",
+        "jobTitle": "Owner"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Graham was brilliant in giving me an insight into how AI could save me time and money with my business. Life is very busy and I feel with his help I can buy back some time that myself and family need but still keep growing a business."
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -383,6 +406,31 @@
         <summary>Why does the price vary between &#163;299 and &#163;999?<span class="material-symbols-outlined faq-icon">add</span></summary>
         <div class="faq-answer">The price is based on the size of your team. Larger businesses have more processes to map and more complex opportunities. The price is fixed and confirmed on your free call before you pay. No surprises.</div>
       </details>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="mb-16 md:mb-24 reveal">
+    <div class="bg-surface-container-high rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/30 relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+      <div class="flex items-center gap-1 mb-6 text-primary">
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:1.5rem">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:1.5rem">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:1.5rem">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:1.5rem">star</span>
+        <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:1.5rem">star</span>
+        <span class="text-xs text-on-surface-variant ml-3 font-semibold uppercase tracking-widest">Verified Google review</span>
+      </div>
+      <blockquote class="text-xl md:text-2xl text-white leading-relaxed font-light mb-6 italic">
+        "Graham was brilliant in giving me an insight into how AI could save me time and money with my business. Life is very busy and I feel with his help I can buy back some time that myself and family need but still keep growing a business."
+      </blockquote>
+      <div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20">
+        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">A</div>
+        <div>
+          <p class="text-white font-bold text-sm">Aaron Henery</p>
+          <p class="text-on-surface-variant text-xs">Owner · Took the 2-hour AI Assessment</p>
+        </div>
+      </div>
     </div>
   </section>
 
