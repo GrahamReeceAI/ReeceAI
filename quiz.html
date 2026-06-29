@@ -645,6 +645,19 @@ function startQuiz() {
     })
   }).catch(() => {}); // Silent fail
 
+  // Add to MailerLite "Quiz Started" group for abandonment automation
+  fetch('/api/mailerlite-track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      firstName: first,
+      lastName: last,
+      business: business || '',
+      status: 'started'
+    })
+  }).catch(() => {}); // Silent fail
+
   goTo('s-questions');
   renderQuestion(0);
 }
@@ -996,6 +1009,19 @@ function showResults() {
     insight_1: insights[0] || '',
     insight_2: insights[1] || ''
   }).catch(() => {}); // Silent fail -- never disrupt the user experience
+
+  // Add to MailerLite "Quiz Completed" group so they're excluded from the abandonment automation
+  fetch('/api/mailerlite-track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: state.email,
+      firstName: state.firstName,
+      lastName: state.lastName,
+      business: state.business || '',
+      status: 'completed'
+    })
+  }).catch(() => {}); // Silent fail
 }
 
 // ==================== FORMSPREE SUBMISSION ====================
