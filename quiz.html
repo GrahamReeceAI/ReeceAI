@@ -289,7 +289,7 @@
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
-      <p class="text-center text-xs text-outline mt-5">Your results PDF will be sent to this email. We never share your data.</p>
+      <p class="text-center text-xs text-outline mt-5">Your results will be shown immediately, plus a PDF report will download to your device. We never share your data.</p>
     </div>
   </div>
 </section>
@@ -1022,6 +1022,12 @@ function showResults() {
       status: 'completed'
     })
   }).catch(() => {}); // Silent fail
+
+  // Auto-download the PDF report after a short delay so the score animation plays first
+  // The user sees their results, then the PDF quietly downloads to their device
+  setTimeout(() => {
+    try { downloadPDF(); } catch (e) { /* silent fail -- manual download button still available */ }
+  }, 2000);
 }
 
 // ==================== FORMSPREE SUBMISSION ====================
