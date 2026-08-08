@@ -31,12 +31,16 @@
   "priceRange": "££",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Croydon",
+    "addressRegion": "Surrey",
     "addressCountry": "GB"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "United Kingdom"
-  },
+  "areaServed": [
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "AdministrativeArea", "name": "Surrey" },
+    { "@type": "AdministrativeArea", "name": "South London" },
+    { "@type": "City", "name": "Croydon" }
+  ],
   "founder": {
     "@type": "Person",
     "name": "Graham Tydeman",
@@ -668,7 +672,9 @@
     <a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
     <a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
   </div>
-  <div class="text-slate-500 max-w-lg mx-auto opacity-60">
+  <div class="text-xs text-slate-600 mb-4">
+    Local coverage: <a class="hover:text-cyan-400 transition-colors" href="/ai-consultant-croydon.html">Croydon</a> · <a class="hover:text-cyan-400 transition-colors" href="/ai-consultant-surrey.html">Surrey</a>
+  </div><div class="text-slate-500 max-w-lg mx-auto opacity-60">
     Reece AI | Registration No: 17137008. Practical AI for UK small businesses.
   </div>
   <div class="pt-8 border-t border-outline-variant/10 w-full max-w-7xl flex justify-between items-center text-xs opacity-50">
