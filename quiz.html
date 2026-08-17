@@ -1159,67 +1159,87 @@ function downloadPDF() {
   doc.setTextColor(180, 200, 220);
   doc.text('AI Readiness Category', M + 58, 108);
 
-  // Insights
+  // Insights (compact spacing to fit content on one page)
   doc.setTextColor(161, 228, 255);
   doc.setFontSize(12);
   doc.setFont('helvetica', 'bold');
   doc.text('Your Personalised Insights', M, 138);
 
-  let y = 146;
-  insights.forEach((insight, i) => {
+  let y = 145;
+  insights.forEach((insight) => {
     doc.setFillColor(21, 31, 52);
     const lines = doc.splitTextToSize(insight, W - M*2 - 20);
-    const boxH = lines.length * 5.5 + 12;
+    const boxH = lines.length * 5 + 8;
     doc.roundedRect(M, y, W - M*2, boxH, 3, 3, 'F');
     doc.setFillColor(0, 207, 255);
     doc.roundedRect(M, y, 4, boxH, 2, 2, 'F');
     doc.setTextColor(180, 200, 220);
     doc.setFontSize(9);
     doc.setFont('helvetica', 'normal');
-    doc.text(lines, M + 10, y + 8);
-    y += boxH + 5;
+    doc.text(lines, M + 10, y + 6);
+    y += boxH + 3;
   });
 
-  // Next step
-  y += 5;
+  // Prepare Next Step content so we can size the container properly
+  let ctaText;
+  if (score <= 3) {
+    ctaText = "No homework before the call. Show up, and we'll work out which one would save you the most time this year.";
+  } else if (score <= 6) {
+    ctaText = "We'll go through your results and pick the gap worth fixing first. No obligation, 15 minutes.";
+  } else {
+    ctaText = "Book a 15-minute call below. Advanced wins, not setup. We'll spend the time on the next layer, not the basics.";
+  }
+  doc.setFontSize(9);
+  const ctaLines = doc.splitTextToSize(ctaText, W - M*2 - 16);
+  const btnH = 12;
+  const nextStepHeight = 12 + 6 + ctaLines.length * 5 + 6 + btnH + 8;
+
+  // Page break if next step would overflow (safe margin above footer at y=277)
+  y += 3;
+  if (y + nextStepHeight > 270) {
+    // Draw footer on current page before adding a new one
+    doc.setFillColor(5, 12, 26);
+    doc.rect(0, 277, W, 20, 'F');
+    doc.setTextColor(100, 130, 160);
+    doc.setFontSize(7);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Reece AI Ltd  |  Reg No: 17137008  |  reeceai.ai  |  graham@reeceai.ai', W/2, 287, { align: 'center' });
+    doc.text('© 2026 Reece AI Ltd. All Rights Reserved.', W/2, 293, { align: 'center' });
+    // Add new page with same dark background
+    doc.addPage();
+    doc.setFillColor(8, 19, 39);
+    doc.rect(0, 0, W, 297, 'F');
+    y = 30;
+  }
+
+  // Draw Next Step box, properly sized to contain title + description + button
   doc.setFillColor(0, 84, 106);
-  doc.roundedRect(M, y, W - M*2, 28, 4, 4, 'F');
+  doc.roundedRect(M, y, W - M*2, nextStepHeight, 4, 4, 'F');
+
+  // Title
   doc.setTextColor(161, 228, 255);
   doc.setFontSize(11);
   doc.setFont('helvetica', 'bold');
   doc.text('Recommended Next Step', M + 8, y + 10);
+
+  // Description
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(9);
   doc.setFont('helvetica', 'normal');
-  const addCalendlyBtn = (yPos) => {
-    const bW = 90, bH = 12, bX = W / 2 - 45;
-    doc.setFillColor(0, 207, 255);
-    doc.roundedRect(bX, yPos, bW, bH, 3, 3, 'F');
-    doc.setTextColor(0, 53, 68);
-    doc.setFontSize(10);
-    doc.setFont('helvetica', 'bold');
-    doc.text('BOOK FREE 15-MINUTE CALL', W / 2, yPos + 8, { align: 'center' });
-    doc.link(bX, yPos, bW, bH, { url: 'https://calendly.com/graham-reeceai/15-30-minute-call' });
-  };
+  doc.text(ctaLines, M + 8, y + 18);
 
-  if (score <= 3) {
-    const txt = "No homework before the call. Show up, and we'll work out which one would save you the most time this year.";
-    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
-    doc.text(lines, M + 8, y + 20);
-    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
-  } else if (score <= 6) {
-    const txt = "We'll go through your results and pick the gap worth fixing first. No obligation -- 15 minutes.";
-    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
-    doc.text(lines, M + 8, y + 20);
-    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
-  } else {
-    const txt = "Book a 15-minute call below. Advanced wins, not setup. We'll spend the time on the next layer, not the basics.";
-    const lines = doc.splitTextToSize(txt, W - M*2 - 16);
-    doc.text(lines, M + 8, y + 20);
-    addCalendlyBtn(y + 20 + lines.length * 5.5 + 6);
-  }
+  // Button - always visible, inside the box
+  const bW = 90, bX = W / 2 - 45;
+  const bY = y + 18 + ctaLines.length * 5 + 6;
+  doc.setFillColor(0, 207, 255);
+  doc.roundedRect(bX, bY, bW, btnH, 3, 3, 'F');
+  doc.setTextColor(0, 53, 68);
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'bold');
+  doc.text('BOOK FREE 15-MINUTE CALL', W / 2, bY + 8, { align: 'center' });
+  doc.link(bX, bY, bW, btnH, { url: 'https://calendly.com/graham-reeceai/15-30-minute-call' });
 
-  // Footer
+  // Footer on the final page
   doc.setFillColor(5, 12, 26);
   doc.rect(0, 277, W, 20, 'F');
   doc.setTextColor(100, 130, 160);
