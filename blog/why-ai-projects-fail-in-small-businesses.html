@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg"/>
+<link rel="apple-touch-icon" href="/images/favicon.svg"/>
+<title>Why Most AI Projects in UK Small Businesses Fail (and How to Avoid It) | Reece AI</title>
+<link rel="canonical" href="https://reeceai.ai/blog/why-ai-projects-fail-in-small-businesses.html"/>
+<meta name="description" content="The five real reasons AI projects fail in UK small businesses, and how to avoid each one. Practical guidance from Graham Tydeman, Founder of Reece AI."/>
+<meta name="keywords" content="why AI projects fail, small business AI failure, AI implementation problems, why AI doesn't work small business, AI adoption UK, AI project success"/>
+<meta name="author" content="Graham Tydeman"/>
+<meta property="og:title" content="Why Most AI Projects in UK Small Businesses Fail (and How to Avoid It)"/>
+<meta property="og:description" content="The five real reasons AI projects fail in UK small businesses, and how to avoid each one. Practical guidance from Reece AI."/>
+<meta property="og:url" content="https://reeceai.ai/blog/why-ai-projects-fail-in-small-businesses.html"/>
+<meta property="og:image" content="https://reeceai.ai/images/og-default.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:alt" content="Reece AI - Practical AI for UK small businesses"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Why Most AI Projects in UK Small Businesses Fail (and How to Avoid It)"/>
+<meta name="twitter:description" content="The five real reasons AI projects fail in UK small businesses, and how to avoid each one."/>
+<meta name="twitter:image" content="https://reeceai.ai/images/og-default.png"/>
+<meta property="article:author" content="Graham Tydeman"/>
+<meta property="article:section" content="AI Implementation"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Most AI Projects in UK Small Businesses Fail (and How to Avoid It)",
+  "description": "The five real reasons AI projects fail in UK small businesses, and how to avoid each one.",
+  "image": "https://reeceai.ai/images/graham-tydeman.png",
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "author": {
+    "@type": "Person",
+    "name": "Graham Tydeman",
+    "jobTitle": "Founder & Director",
+    "url": "https://reeceai.ai/about.html",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Reece AI",
+      "url": "https://reeceai.ai"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Reece AI",
+    "url": "https://reeceai.ai",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://reeceai.ai/images/favicon.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://reeceai.ai/blog/why-ai-projects-fail-in-small-businesses.html"
+  },
+  "articleSection": "AI Implementation",
+  "wordCount": 1050,
+  "inLanguage": "en-GB"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://reeceai.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://reeceai.ai/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Why Most AI Projects in Small Businesses Fail", "item": "https://reeceai.ai/blog/why-ai-projects-fail-in-small-businesses.html" }
+  ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container": "#151f34", "surface": "#081327", "on-primary": "#003544",
+          "primary": "#a1e4ff", "background": "#081327", "primary-container": "#00cfff",
+          "surface-container-high": "#1f2a3f", "on-surface": "#d8e2fe",
+          "surface-container-low": "#101b2f", "outline": "#869399",
+          "on-surface-variant": "#bbc9cf", "on-background": "#d8e2fe",
+          "outline-variant": "#3c494e", "on-primary-container": "#00546a",
+          "primary-fixed-dim": "#54d5ff"
+        },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        fontFamily: { headline: ["Inter"], body: ["Inter"], label: ["Inter"] }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { background-color: #081327; color: #d8e2fe; font-family: 'Inter', sans-serif; }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  .article-body { font-size: 1.125rem; line-height: 1.75; color: #bbc9cf; }
+  .article-body p { margin-bottom: 1.5rem; }
+  .article-body h2 { font-size: 1.75rem; font-weight: 800; color: #ffffff; margin-top: 3rem; margin-bottom: 1.25rem; letter-spacing: -0.025em; line-height: 1.2; }
+  .article-body h3 { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-top: 2rem; margin-bottom: 1rem; }
+  .article-body strong { color: #ffffff; font-weight: 600; }
+  .article-body em { color: #a1e4ff; font-style: normal; font-weight: 500; }
+  .article-body ul { margin: 0 0 1.5rem 0; padding-left: 1.25rem; }
+  .article-body ul li { margin-bottom: 0.5rem; padding-left: 0.5rem; position: relative; list-style: none; }
+  .article-body ul li::before { content: ''; position: absolute; left: -1rem; top: 0.7em; width: 6px; height: 6px; border-radius: 50%; background: #a1e4ff; }
+  .article-body ol { margin: 0 0 1.5rem 0; padding-left: 1.5rem; counter-reset: item; }
+  .article-body ol li { margin-bottom: 0.5rem; padding-left: 0.5rem; }
+  .article-body a { color: #a1e4ff; text-decoration: underline; text-decoration-color: rgba(161,228,255,0.4); text-underline-offset: 3px; }
+  .article-body a:hover { text-decoration-color: #a1e4ff; }
+  .article-body .step-card { background: #151f34; border: 1px solid rgba(60,73,78,0.3); border-radius: 1rem; padding: 1.75rem; margin-bottom: 1.5rem; border-left: 4px solid #a1e4ff; }
+  .article-body .step-card p:last-child { margin-bottom: 0; }
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+  <div class="rounded-full bg-slate-950/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.08)] flex justify-between items-center px-5 md:px-8 py-3">
+    <a href="/" class="text-xl md:text-2xl font-bold tracking-tighter text-white">Reece AI</a>
+    <div class="hidden md:flex gap-8">
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/about.html">About</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/ai-assessment.html">AI Assessment</a>
+      <a class="text-cyan-300 font-semibold transition-colors duration-300" href="/blog/">Blog</a>
+      <a class="text-slate-400 hover:text-white transition-colors duration-300" href="/contact.html">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="/contact.html" class="hidden md:inline-block bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-semibold transition-transform active:scale-90">Get in Touch</a>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-white p-2 rounded-full hover:bg-white/10 transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden mt-2 rounded-2xl bg-slate-950/95 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,207,255,0.1)] p-4">
+    <div class="flex flex-col gap-1">
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/">Home</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/about.html">About</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/ai-assessment.html">AI Assessment</a>
+      <a class="text-cyan-300 bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/blog/">Blog</a>
+      <a class="text-slate-400 hover:text-white hover:bg-white/5 transition-colors duration-300 px-4 py-3 rounded-xl font-semibold text-center block" href="/contact.html">Contact</a>
+      <a href="/contact.html" class="mt-2 bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-semibold text-center block">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-28 md:pt-36 pb-16 md:pb-24 px-4 md:px-8 max-w-3xl mx-auto">
+
+  <!-- Breadcrumb -->
+  <nav class="mb-10 text-sm text-on-surface-variant reveal">
+    <a href="/blog/" class="inline-flex items-center gap-1 hover:text-primary transition-colors">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      Back to blog
+    </a>
+  </nav>
+
+  <!-- Article header -->
+  <header class="mb-12 reveal">
+    <div class="flex items-center gap-4 mb-6 text-xs text-on-surface-variant">
+      <span class="bg-primary/10 border border-primary/20 text-primary font-bold uppercase tracking-widest px-3 py-1 rounded-full">AI Implementation</span>
+      <span>6 min read</span>
+      <span>2 September 2026</span>
+    </div>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1.05] mb-6">
+      Why Most AI Projects in UK Small Businesses Fail (and How to Avoid It)
+    </h1>
+    <div class="flex items-center gap-3 mt-8">
+      <img src="/images/graham-tydeman.png" alt="Graham Tydeman, Founder of Reece AI" class="w-12 h-12 object-contain"/>
+      <div>
+        <p class="text-white font-bold text-sm">Graham Tydeman</p>
+        <p class="text-on-surface-variant text-xs">Founder &amp; Director, Reece AI</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article body -->
+  <article class="article-body reveal">
+
+    <p>Most AI projects in small businesses don't fail because AI doesn't work.</p>
+
+    <p>They fail for reasons that have nothing to do with the technology.</p>
+
+    <p>I've seen this pattern enough times to spot it before a project starts. The tools are fine. The problem is almost always somewhere else. Here are the five reasons AI projects in UK small businesses actually fail, in order of how often I see them.</p>
+
+    <h2>1. Starting with the tool, not the problem</h2>
+
+    <p>The most common way small business AI projects go wrong.</p>
+
+    <p>Someone reads an article about ChatGPT. They think "we should use ChatGPT." They roll it out. Six weeks later, nobody's using it and they're back to Google searches.</p>
+
+    <p>The problem: they started with the tool, not with a problem.</p>
+
+    <p>The right order is always the same. Start with a specific problem: "We're losing 6 hours a week on quoting" or "Enquiries at 7pm sit until 9am the next morning." Then work out which AI tool solves that specific problem. Not the other way round.</p>
+
+    <div class="step-card">
+      <p><strong>How to avoid it:</strong> Before you buy or subscribe to any AI tool, write down the exact problem you're trying to solve. If you can't, don't buy anything yet.</p>
+    </div>
+
+    <h2>2. Trying to change too much at once</h2>
+
+    <p>The second most common failure.</p>
+
+    <p>An owner reads about AI, gets excited, and tries to change five things at the same time. New customer service AI, new automated quoting, new content generation, new lead scoring, new email automation.</p>
+
+    <p>Six months later, nothing has stuck properly and the team is confused.</p>
+
+    <p>Small businesses succeed with AI when they do one thing well, then move to the next. Not five things badly.</p>
+
+    <div class="step-card">
+      <p><strong>How to avoid it:</strong> Pick the single AI opportunity that would save you the most time. Build it, embed it, make sure it's genuinely being used. THEN move to the second one.</p>
+    </div>
+
+    <h2>3. The team was never included</h2>
+
+    <p>This one kills more AI projects than the technology ever does.</p>
+
+    <p>Owner decides "we're using AI now." Buys the tool. Rolls it out. Team resists, either openly or quietly. Six weeks later, the tool is still paid for but nobody uses it.</p>
+
+    <p>People don't resist AI because they're stupid or scared of change. They resist it because nobody explained why it was being used, what problem it was solving for THEM, or how it would affect their day-to-day work.</p>
+
+    <p>If your team feels AI was done TO them rather than WITH them, they will find ways not to use it. Every time.</p>
+
+    <div class="step-card">
+      <p><strong>How to avoid it:</strong> Involve the people who'll actually use the AI from day one. Explain the problem you're solving. Show them how it makes THEIR job easier, not just yours. Ask them what would help.</p>
+    </div>
+
+    <h2>4. Nobody's job to keep it working</h2>
+
+    <p>AI isn't a "set it and forget it" purchase.</p>
+
+    <p>Tools change. Prompts need updating. Integrations break when other software updates. Team members leave and the knowledge walks out with them. The AI setup that worked brilliantly in month one degrades quietly by month four if nobody's paying attention.</p>
+
+    <p>Most small businesses buy AI as if it's a printer. Install it, use it, ignore it. That works for printers. It doesn't work for AI.</p>
+
+    <div class="step-card">
+      <p><strong>How to avoid it:</strong> Before you build anything, decide who owns it. Someone (yourself, a team member, or your consultant) needs a monthly check-in with each AI system to see what's changed and what needs adjusting. If nobody owns it, it will degrade.</p>
+    </div>
+
+    <h2>5. Expecting perfection on day one</h2>
+
+    <p>The AI project that got shelved after two weeks because "the outputs weren't good enough."</p>
+
+    <p>Here's the truth: AI outputs are rarely perfect on day one. A proposal generator will produce a 70% good first draft. An email responder will get the tone slightly wrong sometimes. A meeting summariser will miss the odd nuance.</p>
+
+    <p>But 70% good in 5 minutes is better than 100% good in an hour. AI's value is speed with review, not perfection without review.</p>
+
+    <p>Businesses that succeed with AI treat the output as a first draft. They review it, edit it, and iterate on the prompts and setup until the drafts get closer to 90%+. That takes weeks, not days.</p>
+
+    <div class="step-card">
+      <p><strong>How to avoid it:</strong> Budget 4 to 8 weeks of tweaking, not 4 to 8 days. Accept that the first output won't be the last output. Iterate.</p>
+    </div>
+
+    <h2>The pattern behind all five</h2>
+
+    <p>Look at all five failure modes together and one thing becomes obvious.</p>
+
+    <p>None of them are about the AI.</p>
+
+    <p>They're all about the process around the AI. The scoping. The people. The ownership. The expectations. The pace.</p>
+
+    <p>Which is why the businesses that succeed with AI aren't the ones with the best tools. They're the ones with the best approach.</p>
+
+    <h2>How to do it right</h2>
+
+    <p>If you're thinking about bringing AI into your business, do it in this order:</p>
+
+    <ol>
+      <li>Identify the specific problem you're trying to solve (not "use AI").</li>
+      <li>Get the team involved from day one.</li>
+      <li>Pick ONE opportunity to start with, not five.</li>
+      <li>Decide who owns it before you build it.</li>
+      <li>Budget for iteration, not perfection.</li>
+    </ol>
+
+    <p>That's the whole method.</p>
+
+    <p>If you'd rather have someone work through this with you, that's what the <a href="/quiz.html">AI Readiness Assessment</a> is for. A free 3-minute questionnaire that shows you where AI would have the biggest impact AND how ready your business is to make it stick.</p>
+
+    <p>Or if you want a deeper conversation, <a href="/contact.html">book a free 15-minute call</a>. We'll talk through your business and where AI would actually work for you.</p>
+
+  </article>
+
+  <!-- Related reading -->
+  <section class="mt-20 reveal">
+    <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight mb-8">Related reading</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/blog/5-things-to-automate-with-ai-first.html" class="block bg-surface-container border border-outline-variant/20 hover:border-primary/40 rounded-2xl p-6 transition-all group">
+        <div class="flex items-center gap-3 mb-3 text-xs">
+          <span class="bg-primary/10 border border-primary/20 text-primary font-bold uppercase tracking-widest px-2 py-1 rounded-full">AI Automation</span>
+          <span class="text-on-surface-variant">5 min read</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">5 things UK small businesses should automate with AI first</h3>
+        <p class="text-on-surface-variant text-sm">The five things almost every UK small business should automate with AI first, in the order that actually works.</p>
+      </a>
+      <a href="/blog/what-is-an-ai-assessment.html" class="block bg-surface-container border border-outline-variant/20 hover:border-primary/40 rounded-2xl p-6 transition-all group">
+        <div class="flex items-center gap-3 mb-3 text-xs">
+          <span class="bg-primary/10 border border-primary/20 text-primary font-bold uppercase tracking-widest px-2 py-1 rounded-full">AI Assessments</span>
+          <span class="text-on-surface-variant">4 min read</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">What is an AI assessment, and is it worth paying for one?</h3>
+        <p class="text-on-surface-variant text-sm">What one actually involves, what to look for, red flags to watch out for, and whether it's worth the money.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Author + CTA -->
+  <section class="mt-16 reveal">
+    <div class="bg-gradient-to-br from-surface-container-high to-surface-container rounded-2xl md:rounded-3xl p-8 md:p-12 border border-primary/20">
+      <div class="flex items-start gap-5 mb-6">
+        <img src="/images/graham-tydeman.png" alt="Graham Tydeman, Founder of Reece AI" class="w-16 h-16 object-contain flex-shrink-0"/>
+        <div>
+          <p class="text-white font-bold">Written by Graham Tydeman</p>
+          <p class="text-on-surface-variant text-sm mb-3">Founder &amp; Director, Reece AI</p>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Ex-commodity broker. Spent 20 years giving the world's biggest institutions an advantage with the best tools. Now doing the same for UK small businesses with AI.</p>
+        </div>
+      </div>
+      <div class="border-t border-outline-variant/20 pt-6 flex flex-col sm:flex-row gap-3">
+        <a href="/quiz.html" class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-bold px-6 py-3 rounded-full hover:scale-105 transition-transform text-sm flex-1">
+          Take the Free Assessment <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+        <a href="/ai-assessment.html" class="inline-flex items-center justify-center gap-2 bg-surface-container border border-primary/40 text-primary font-bold px-6 py-3 rounded-full hover:border-primary transition-colors text-sm flex-1">
+          See the AI Assessment <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to blog -->
+  <div class="mt-12 text-center reveal">
+    <a href="/blog/" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+      <span class="material-symbols-outlined">arrow_back</span> Back to the blog
+    </a>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-950 w-full pt-20 pb-10 px-8 flex flex-col items-center text-center space-y-4 text-sm tracking-wide">
+  <div class="text-xl font-bold text-white mb-4">Reece AI</div>
+  <div class="flex justify-center gap-3 mb-6">
+  <a href="https://www.linkedin.com/company/reece-ai/" target="_blank" rel="noopener" aria-label="Reece AI on LinkedIn" class="w-9 h-9 rounded-full bg-white/5 hover:bg-primary hover:text-on-primary flex items-center justify-center text-primary transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <a href="https://www.facebook.com/profile.php?id=61591681780576" target="_blank" rel="noopener" aria-label="Reece AI on Facebook" class="w-9 h-9 rounded-full bg-white/5 hover:bg-primary hover:text-on-primary flex items-center justify-center text-primary transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+  <div class="flex flex-wrap justify-center gap-6 mb-8 text-slate-500">
+    <a class="hover:text-cyan-400 transition-colors" href="mailto:graham@reeceai.ai">graham@reeceai.ai</a>
+    <a class="hover:text-cyan-400 transition-colors" href="https://reeceai.ai">reeceai.ai</a>
+  </div>
+  <div class="text-xs text-slate-600 mb-4">
+    Local coverage: <a class="hover:text-cyan-400 transition-colors" href="/ai-consultant-croydon.html">Croydon</a> · <a class="hover:text-cyan-400 transition-colors" href="/ai-consultant-surrey.html">Surrey</a>
+  </div><div class="text-slate-500 max-w-md opacity-60">Reece AI | Registration No: 17137008. Practical AI for UK small businesses.</div>
+  <div class="pt-8 border-t border-white/5 w-full max-w-7xl flex justify-between items-center text-xs text-slate-700">
+    <p>&copy; 2026 Reece AI. All rights reserved.</p>
+    <div class="flex gap-4"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+</script>
+</body>
+</html>
